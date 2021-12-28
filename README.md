@@ -1,1 +1,3 @@
 # Tomodachi
+
+## Table of Contents
