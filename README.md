@@ -1,5 +1,8 @@
 # Tomodachi
 
-## Table of Contents
-
-## Demo
+# Contributors
+* Taylor Hakes
+* Aimee Forbush
+* Colton Johnson
+* Michael Heinhold
+* Sheldon Collins
