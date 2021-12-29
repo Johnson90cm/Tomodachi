@@ -24,7 +24,7 @@ function Rainfall() {
         }
 
         if (diceRoll >= 76 && diceRoll <= 95) {
-            // 'severe storms' might represent even higher lithosphere stat changes
+            // 'severe storms' might represent even higher hydrosphere stat changes
             const hydroStatAddition = randomStatGenerator(175, 225)
 
             // decide what other stats we want this to affect, and in what magnitude
@@ -38,7 +38,7 @@ function Rainfall() {
         }
 
         if (diceRoll >= 96 && diceRoll <= 100) {
-            // 'tsunamis' might represent extreme lithosphere stat changes
+            // 'tsunamis' might represent extreme hydrosphere stat changes
             const hydroStatAddition = randomStatGenerator(400, 600)
 
             // decide what other stats we want this to affect, and in what magnitude
