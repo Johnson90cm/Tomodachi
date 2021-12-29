@@ -1,3 +1,7 @@
 import Rainfall from "./Rainfall";
+import Volcano from "./Volcano";
 
-export default Rainfall;
+export {
+    Rainfall,
+    Volcano
+}
