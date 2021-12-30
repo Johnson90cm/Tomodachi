@@ -1,4 +1,61 @@
-.App {
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+body {
+  background-color: rgb(69, 64, 114);
+  background-size: cover;
+  height: 95vh;
+  position: relative;
+  font-family: 'Press Start 2P', cursive;
+  color: white;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.container {
+  width: 90%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.button-container {
+  width: 33%;
+  padding: 1rem 2.5rem;
+  border: 3px solid black;
+  border-radius: 5px;
+  background: rgb(107, 107, 107);
+  box-shadow: 8px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+ul {
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  list-style-type: none;
+}
+
+li {
+  margin: 1em;
+  font-size: small;
+}
+
+button {
+  margin: .5rem;
+  padding: .50rem;
+  border: 2px solid black;
+  box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.2);
+  background-color: rgb(179, 179, 179);
+  color: rgb(124, 25, 116);
+  font-family: 'Press Start 2P', cursive;
+}
+
+/* .App {
   text-align: center;
 }
 
@@ -35,4 +92,4 @@
   to {
     transform: rotate(360deg);
   }
-}
+} */
