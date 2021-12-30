@@ -16,11 +16,15 @@ function Volcano(props) {
 
             // decide what other stats we want this to affect, and in what magnitude
             const hydroStatAddition = randomStatGenerator(-50, -75)
+            const atmoStatAddition = randomStatGenerator(-50, -75)
+            const bioStatAddition = randomStatGenerator(-50, -75)
 
             // instead of logging this random stat value, eventually add it to the db with a mutation
             console.log(`Volcanoes erupt..
                 Lithosphere increases: ${lithoStatAddition}
                 Hydrosphere decreases: ${hydroStatAddition}
+                Atmosphere decreases: ${atmoStatAddition}
+                Biosphere decreases: ${bioStatAddition}
                 `)
         }
 
@@ -30,11 +34,15 @@ function Volcano(props) {
 
             // decide what other stats we want this to affect, and in what magnitude
             const hydroStatAddition = randomStatGenerator(-100, -125)
+            const atmoStatAddition = randomStatGenerator(-100, -125)
+            const bioStatAddition = randomStatGenerator(-100, -125)
 
             // instead of logging this random stat value, eventually add it to the db with a mutation
             console.log(`Severe Eruptions!
                 Lithosphere increases: ${lithoStatAddition}
                 Hydrosphere decreases: ${hydroStatAddition}
+                Atmosphere decreases: ${atmoStatAddition}
+                Biosphere decreases: ${bioStatAddition}
                 `)
         }
 
@@ -44,11 +52,15 @@ function Volcano(props) {
 
             // decide what other stats we want this to affect, and in what magnitude
             const hydroStatAddition = randomStatGenerator(-300, -400)
+            const atmoStatAddition = randomStatGenerator(-300, -400)
+            const bioStatAddition = randomStatGenerator(-300, -400)
 
             // instead of logging this random stat value, eventually add it to the db value of the planet
             console.log(`Massive volcanoes terraform the planet!!!
                 Lithosphere increases: ${lithoStatAddition}
                 Hydrosphere decreases: ${hydroStatAddition}
+                Atmosphere decreases: ${atmoStatAddition}
+                Biosphere decreases: ${bioStatAddition}
                 `)
         }
 
