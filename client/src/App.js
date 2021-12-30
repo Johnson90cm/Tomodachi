@@ -1,7 +1,7 @@
 import './App.css';
 import Nav from './components/Nav';
 import { useState } from 'react';
-import { Rainfall, Volcano, Sunlight } from './components/Interactions'
+import { Rainfall, Volcano, Sunlight, Wind } from './components/Interactions'
 
 function App() {
 
@@ -43,6 +43,7 @@ function App() {
         <Rainfall changeAnimation={changeAnimation} />
         <Volcano changeAnimation={changeAnimation} />
         <Sunlight changeAnimation={changeAnimation} />
+        <Wind changeAnimation={changeAnimation} />
       </div>
     );
   }
