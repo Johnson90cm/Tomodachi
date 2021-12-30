@@ -1,11 +1,14 @@
 import React from "react";
 import { randomStatGenerator } from "../../utils/helpers";
 
-function Rainfall() {
+function Rainfall(props) {
     // Need to grab planet's stats from db with useQuery
 
     // Handle the button click and stat manipulation with this function
     function rainfallHandler() {
+        //change the animation
+        props.changeAnimation('rainfall');
+
         // Roll a dice to see which of several pre-determined events takes place. We can easily manipulate the probability of receiving different events upon interaction (ex. 75% chance to have normal rainfall, 20% chance for severe storms, 5% chance for continent-flooding tsunamis; each with associated stat changes.)
         const diceRoll = randomStatGenerator(1, 100)
 
