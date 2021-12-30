@@ -15,6 +15,7 @@ function Rainfall(props) {
         if (diceRoll >= 1 && diceRoll <= 75) {
             // generate a random stat increase (these numbers can be whatever we want, 100-150 is an example)
             const hydroStatAddition = randomStatGenerator(100, 150)
+            const bioStatAddition = randomStatGenerator(50, 100)
 
             // decide what other stats we want this to affect, and in what magnitude
             const lithoStatAddition = randomStatGenerator(-50, -75)
@@ -22,6 +23,7 @@ function Rainfall(props) {
             // instead of logging this random stat value, eventually add it to the db with a mutation
             console.log(`Rainfall..
                 Hydrosphere increases: ${hydroStatAddition}
+                Biosphere increases: ${bioStatAddition}
                 Lithosphere decreases: ${lithoStatAddition}
                 `)
         }
@@ -29,6 +31,7 @@ function Rainfall(props) {
         if (diceRoll >= 76 && diceRoll <= 95) {
             // 'severe storms' might represent even higher hydrosphere stat changes
             const hydroStatAddition = randomStatGenerator(175, 225)
+            const bioStatAddition = randomStatGenerator(125, 175)
 
             // decide what other stats we want this to affect, and in what magnitude
             const lithoStatAddition = randomStatGenerator(-100, -125)
@@ -36,6 +39,7 @@ function Rainfall(props) {
             // instead of logging this random stat value, eventually add it to the db with a mutation
             console.log(`Severe Storms!
                 Hydrosphere increases: ${hydroStatAddition}
+                Biosphere increases: ${bioStatAddition}
                 Lithosphere decreases: ${lithoStatAddition}
                 `)
         }
@@ -43,6 +47,7 @@ function Rainfall(props) {
         if (diceRoll >= 96 && diceRoll <= 100) {
             // 'tsunamis' might represent extreme hydrosphere stat changes
             const hydroStatAddition = randomStatGenerator(400, 600)
+            const bioStatAddition = randomStatGenerator(350, 500)
 
             // decide what other stats we want this to affect, and in what magnitude
             const lithoStatAddition = randomStatGenerator(-300, -400)
@@ -50,6 +55,7 @@ function Rainfall(props) {
             // instead of logging this random stat value, eventually add it to the db value of the planet
             console.log(`Tsunamis drown entire continents!!!
                 Hydrosphere increases: ${hydroStatAddition}
+                Biosphere increases: ${bioStatAddition}
                 Lithosphere decreases: ${lithoStatAddition}
                 `)
         }
