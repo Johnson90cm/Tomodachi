@@ -14,10 +14,16 @@ function App() {
         setTimeout(()=>{changeAnimation('calm')}, 1500)
         break;
       case 'sunlight':
+        console.log('cool sunlight animation');
+        setTimeout(()=>{changeAnimation('calm')}, 1500)
         break;
       case 'volcanoes':
+        console.log('cool volcanoes animation');
+        setTimeout(()=>{changeAnimation('calm')}, 1500)
         break;
       case 'wind':
+        console.log('cool wind animation');
+        setTimeout(()=>{changeAnimation('calm')}, 1500)
         break;
       default:
         console.log('cool calm animation')
@@ -35,7 +41,7 @@ function App() {
           {renderAnimation()}
         </div>
         <Rainfall changeAnimation={changeAnimation} />
-        <Volcano />
+        <Volcano changeAnimation={changeAnimation} />
       </div>
     );
   }

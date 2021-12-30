@@ -1,11 +1,12 @@
 import React from "react";
 import { randomStatGenerator } from "../../utils/helpers";
 
-function Volcano() {
+function Volcano(props) {
     // Need to grab planet's stats from db with useQuery
 
     // Handle the button click and stat manipulation with this function
     function volcanoHandler() {
+        props.changeAnimation('volcanoes')
         // Roll a dice to see which of several pre-determined events takes place. We can easily manipulate the probability of receiving different events upon interaction (ex. 75% chance to have small volcanoes, 20% chance for severe eruptions, 5% chance for continent-forming events; each with associated stat changes.)
         const diceRoll = randomStatGenerator(1, 100)
 
