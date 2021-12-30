@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
 body {
+  /* Background image is temp - Could not find artist to credit for the time being */
+  background-image: url(https://steamuserimages-a.akamaihd.net/ugc/271724616138984267/FD78FE7C4AC9EC2941BACBB457D311B908EA9CCD/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false);
   background-color: rgb(69, 64, 114);
   background-size: cover;
   height: 95vh;
@@ -17,13 +19,19 @@ body {
 }
 
 .container {
-  width: 90%;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
 
+.box {
+  background-color: rgb(69, 64, 114);
+  border: 4px solid rgb(172, 172, 172);
+  padding: 2.5rem;
+}
+
+/* Incase we wrap the buttons */
 .button-container {
   width: 33%;
   padding: 1rem 2.5rem;
@@ -53,6 +61,36 @@ button {
   background-color: rgb(179, 179, 179);
   color: rgb(124, 25, 116);
   font-family: 'Press Start 2P', cursive;
+}
+
+/* Ipad Media Queries */
+
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (-webkit-min-device-pixel-ratio: 1) {
+
+    .box {
+      padding: 0;
+      height: 66%;
+      width: 75%;
+    }
+
+}
+
+/* Iphone Media Queries */
+
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 480px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+
+    .box {
+      padding: 0;
+      height: 90%;
+      width: 90%;
+    }
+
 }
 
 /* .App {

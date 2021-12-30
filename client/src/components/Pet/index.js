@@ -1,5 +1,5 @@
 import React from "react";
-import Calm from '../../assets/calm.gif'
+import Calm from '../../assets/alt-calm.gif'
 import './style.css'
 
 function Pet() {

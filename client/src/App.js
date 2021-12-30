@@ -34,7 +34,7 @@ function App() {
 
   return (
     <div className="wrapper">
-      <div className='container'>
+      <div className='container box'>
         <Nav />
         <h1>
           Tomodachi
