@@ -4,7 +4,7 @@ import './style.css'
 function Nav() {
     return (
         <ul>
-            <li>Home
+            {/* <li>Home
             </li>
 
             <li>Stats
@@ -14,7 +14,7 @@ function Nav() {
             </li>
 
             <li>Support
-            </li>
+            </li> */}
         </ul>
     )
 }
