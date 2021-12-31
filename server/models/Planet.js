@@ -8,10 +8,22 @@ const planetSchema = new Schema(
             unique: true,
             trim: true
         },
-        spheres: [
+        biosphere: {
+            type: INT
+         },
+         hydrosphere: {
+            type: INT
+         },
+         lithosphere: {
+            type: INT
+         },
+         atmosphere: {
+            type: INT
+         },
+        interactions:[
             {
                 type: Schema.Types.ObjectId,
-                ref: 'Sphere'
+                ref: 'Interaction'
             }
         ]
     }
