@@ -20,12 +20,12 @@ const userSchema = new Schema({
     required: true,
     minlength: 5,
   },
-  planets: [
-      {
-          type: Schema.Types.ObjectId,
-          ref: "Planet"
-      }
-  ]
+  savedPlanets: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "Planet",
+    },
+  ],
 });
 
 // set up pre-save middleware to create password

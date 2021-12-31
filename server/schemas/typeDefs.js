@@ -9,6 +9,19 @@ type User {
     username: String
     email: String
 }
+type Planet {
+    _id: ID
+    planetname: String!
+    biosphere: Int
+    hydrosphere: Int
+    lithosphere: Int
+    atmosphere: Int
+    interactions: [Interaction]
+}
+type Interaction {
+    name: String
+    stats: Int
+}
 type Auth {
     token: ID!
     user: User
