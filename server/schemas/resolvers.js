@@ -1,4 +1,4 @@
-const { User } = require("../models");
+const { User, Planet } = require("../models");
 const { AuthenticationError } = require("apollo-server-express");
 const { signToken } = require("../utils/auth");
 
@@ -47,6 +47,24 @@ const resolvers = {
       const token = signToken(user);
       return { token, user };
     },
+    createPlanet: async (parent, args) => {
+      const user = await User.findOne({ email: req.email })
+
+      if (!user) {
+        return new Error("User not found", user.message)
+      } 
+    
+      const planet = await Planet.create(args);
+
+      if (!planet) {
+        return new Error("Could not create Planet", planet.message)
+      }
+      // utility func assigns it to an interaction
+      //save to planet .save() 
+      // save planet to user = saving id of planet to user
+      // return user
+    }
+    
   },
 };
 
