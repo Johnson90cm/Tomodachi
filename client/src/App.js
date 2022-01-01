@@ -8,29 +8,7 @@ function App() {
 
   const [animation, changeAnimation] = useState('calm');
 
-  const renderAnimation = () => {
-    switch (animation) {
-      case 'rainfall':
-        console.log('cool rainfall animation');
-        setTimeout(() => { changeAnimation('calm') }, 1500)
-        break;
-      case 'sunlight':
-        console.log('cool sunlight animation');
-        setTimeout(() => { changeAnimation('calm') }, 1500)
-        break;
-      case 'volcanoes':
-        console.log('cool volcanoes animation');
-        setTimeout(() => { changeAnimation('calm') }, 1500)
-        break;
-      case 'wind':
-        console.log('cool wind animation');
-        setTimeout(() => { changeAnimation('calm') }, 1500)
-        break;
-      default:
-        console.log('cool calm animation')
-        break;
-    }
-  }
+
 
   return (
     <div className="wrapper">
@@ -45,10 +23,7 @@ function App() {
           <li>Stat 3</li>
           <li>Stat 4</li>
         </ul>
-        <Pet />
-        <div>
-          {renderAnimation()}
-        </div>
+        <Pet animation={animation} changeAnimation={changeAnimation} />
           <Rainfall changeAnimation={changeAnimation} />
           <Volcano changeAnimation={changeAnimation} />
           <Sunlight changeAnimation={changeAnimation} />
