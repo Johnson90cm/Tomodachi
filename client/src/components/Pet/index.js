@@ -1,5 +1,5 @@
 import React from "react";
-import Calm from '../../assets/alt-calm.gif'
+import Calm from '../../assets/calm.gif'
 import Rainfall from "../../assets/flood.gif";
 import Fires from '../../assets/fires.gif';
 import Tornado from '../../assets/tornado.gif'
@@ -16,7 +16,7 @@ function Pet(props) {
         case 'sunlight':
             console.log('cool sunlight animation');
             setTimeout(() => { props.changeAnimation('calm') }, 2000)
-            break;
+            break
         case 'volcanoes':
             console.log('cool volcanoes animation');
             setTimeout(() => { props.changeAnimation('calm') }, 2000)

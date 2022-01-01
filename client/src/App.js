@@ -24,10 +24,12 @@ function App() {
           <li>Stat 4</li>
         </ul>
         <Pet animation={animation} changeAnimation={changeAnimation} />
+        <div className='button-container'>
           <Rainfall changeAnimation={changeAnimation} />
           <Volcano changeAnimation={changeAnimation} />
           <Sunlight changeAnimation={changeAnimation} />
           <Wind changeAnimation={changeAnimation} />
+        </div>
       </div>
     </div>
   );
