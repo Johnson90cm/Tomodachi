@@ -7,3 +7,20 @@
     box-shadow: 8px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
+/* Possible use: add a text gradient with keyframes */
+/* .textgradient {
+	background: linear-gradient(-45deg, #ff0000, #00ff2a, #0004ff, #ff00d4);
+	background-size: 300%;
+	font-weight: 900;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	animation: animated_text 10s ease-in-out infinite;
+	-moz-animation: animated_text 10s ease-in-out infinite;
+	-webkit-animation: animated_text 10s ease-in-out infinite;
+}
+
+@keyframes animated_text {
+	0% { background-position: 0px 50%; }
+	50% { background-position: 100% 50%; }
+	100% { background-position: 0px 50%; }
+} */

@@ -49,10 +49,12 @@ function App() {
         <div>
           {renderAnimation()}
         </div>
+        <div className='button-container'>
           <Rainfall changeAnimation={changeAnimation} />
           <Volcano changeAnimation={changeAnimation} />
           <Sunlight changeAnimation={changeAnimation} />
           <Wind changeAnimation={changeAnimation} />
+        </div>
       </div>
     </div>
   );
