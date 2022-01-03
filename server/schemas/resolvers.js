@@ -53,7 +53,7 @@ const resolvers = {
           { $push: { savedPlanets: args } },
           { new: true })
           .populate('savedPlanets')
-        
+
         return user;
       }
 
@@ -66,9 +66,29 @@ const resolvers = {
     // return new planet
 
     // resolve the rainfall interaction by updating stats on the proper planet
-    // Rainfall: async (parent, { bio, hydro, litho }, context) => {
-    //   const planet = Planet.findOneAndUpdate() 
-    // }
+    rainfall: async (parent, { planetId, hydro, bio, litho }, context) => {
+      if (context.user) {
+        const user = await User.findById(context.user._id) // returns user
+
+        const planet = user.savedPlanets.id(planetId) // returns matching planet subdocument
+
+        // calculate the new value (db value + stat change)
+        const updatedBio = planet.biosphere += bio
+        const updatedHydro = planet.hydrosphere += hydro
+        const updatedLitho = planet.lithosphere += litho
+        const updatedAge = planet.age += 1000
+
+        // update the subdocuments values
+        planet.set({ 
+          biosphere: updatedBio,
+          hydrosphere: updatedHydro,
+          lithosphere: updatedLitho,
+          age: updatedAge
+        })
+
+        return user.save() //.save() is critical to save your document changes
+      }
+    }
   },
 };
 
