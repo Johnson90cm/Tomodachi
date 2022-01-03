@@ -79,7 +79,7 @@ const resolvers = {
         const updatedAge = planet.age += 1000
 
         // update the subdocuments values
-        planet.set({ 
+        planet.set({
           biosphere: updatedBio,
           hydrosphere: updatedHydro,
           lithosphere: updatedLitho,
@@ -88,8 +88,85 @@ const resolvers = {
 
         return user.save() //.save() is critical to save your document changes
       }
+
+      throw new AuthenticationError('Not logged in');
+    },
+    volcano: async (parent, { planetId, hydro, bio, litho, atmo }, context) => {
+      if (context.user) {
+        const user = await User.findById(context.user._id) // returns user
+
+        const planet = user.savedPlanets.id(planetId) // returns matching planet subdocument
+
+        // calculate the new value (db value + stat change)
+        const updatedBio = planet.biosphere += bio
+        const updatedHydro = planet.hydrosphere += hydro
+        const updatedLitho = planet.lithosphere += litho
+        const updatedAtmo = planet.atmosphere += atmo
+        const updatedAge = planet.age += 1000
+
+        // update the subdocuments values
+        planet.set({
+          biosphere: updatedBio,
+          hydrosphere: updatedHydro,
+          lithosphere: updatedLitho,
+          atmosphere: updatedAtmo,
+          age: updatedAge
+        })
+
+        return user.save() //.save() is critical to save your document changes
+      }
+
+      throw new AuthenticationError('Not logged in');
+    },
+    sunlight: async (parent, { planetId, hydro, bio, atmo }, context) => {
+      if (context.user) {
+        const user = await User.findById(context.user._id) // returns user
+
+        const planet = user.savedPlanets.id(planetId) // returns matching planet subdocument
+
+        // calculate the new value (db value + stat change)
+        const updatedBio = planet.biosphere += bio
+        const updatedHydro = planet.hydrosphere += hydro
+        const updatedAtmo = planet.atmosphere += atmo
+        const updatedAge = planet.age += 1000
+
+        // update the subdocuments values
+        planet.set({
+          biosphere: updatedBio,
+          hydrosphere: updatedHydro,
+          atmosphere: updatedAtmo,
+          age: updatedAge
+        })
+
+        return user.save() //.save() is critical to save your document changes
+      }
+
+      throw new AuthenticationError('Not logged in');
+    },
+    wind: async (parent, { planetId, bio, atmo }, context) => {
+      if (context.user) {
+        const user = await User.findById(context.user._id) // returns user
+
+        const planet = user.savedPlanets.id(planetId) // returns matching planet subdocument
+
+        // calculate the new value (db value + stat change)
+        const updatedBio = planet.biosphere += bio
+        const updatedAtmo = planet.atmosphere += atmo
+        const updatedAge = planet.age += 1000
+
+        // update the subdocuments values
+        planet.set({
+          biosphere: updatedBio,
+          atmosphere: updatedAtmo,
+          age: updatedAge
+        })
+
+        return user.save() //.save() is critical to save your document changes
+      }
+
+      throw new AuthenticationError('Not logged in');
     }
-  },
+  }
 };
 
 module.exports = resolvers;
