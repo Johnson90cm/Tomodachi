@@ -20,10 +20,7 @@ const resolvers = {
     },
     // get user by username
     user: async (parent, { username }) => {
-      return User.findOne({ username }).select("-__v -password");
-    },
-    planets: async () => {
-      return Planet.find()
+      return User.findOne({ username }).select("-__v -password").populate('savedPlanets');
     }
   },
   Mutation: {
@@ -50,23 +47,13 @@ const resolvers = {
       return { token, user };
     },
     createPlanet: async (parent, args, context) => {
-      // create a new planet
-      const planet = await Planet.create(args);
-
-      if (!planet) {
-        return new Error("Could not create Planet", planet.message)
-      }
-
       // add planet to User's savedPlanets array
       if (context.user) {
-        console.log(context.user._id)
-        console.log(planet)
-        
         const user = await User.findByIdAndUpdate(context.user._id,
-          { $push: { savedPlanets: planet._id } },
+          { $push: { savedPlanets: args } },
           { new: true })
           .populate('savedPlanets')
-
+        
         return user;
       }
 
