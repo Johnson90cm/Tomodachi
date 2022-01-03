@@ -16,6 +16,7 @@ const typeDefs = gql`
     hydrosphere: Int
     lithosphere: Int
     atmosphere: Int
+    age: Int
   }
   type Auth {
     token: ID!
