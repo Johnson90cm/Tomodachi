@@ -6,8 +6,9 @@ const resolvers = {
   Query: {
     me: async (parent, args, context) => {
       if (context.user) {
-        const userData = await User.findOne({ _id: context.user.id })
-        .select("-__v -passwordz");
+        const userData = await User.findOne({ _id: context.user.id }).select(
+          "-__v -passwordz"
+        );
 
         return userData;
       }
@@ -15,9 +16,7 @@ const resolvers = {
     },
     // get all users
     users: async () => {
-      return User
-      .find()
-      .select("-__v -password");
+      return User.find().select("-__v -password");
     },
     // get user by username
     user: async (parent, { username }) => {
@@ -52,19 +51,22 @@ const resolvers = {
 
     //   if (!user) {
     //     return new Error("User not found", user.message)
-    //   } 
-    
+    //   }
+
     //   const planet = await Planet.create(args);
 
     //   if (!planet) {
     //     return new Error("Could not create Planet", planet.message)
     //   }
     //   // utility func assigns it to an interaction
-    //   //save to planet .save() 
+    //   //save to planet .save()
     //   // save planet to user = saving id of planet to user
     //   // return user
-    // }
-    
+    // },
+    // addStat: FindOneandUpdateb for each interaction
+    // if user is logged in look at id matches
+    // update specific stat
+    // return new planet
   },
 };
 

@@ -19,12 +19,9 @@ const planetSchema = new Schema({
   atmosphere: {
     type: Number,
   },
-  interactions: [
-    {
-      type: Schema.Types.ObjectId,
-      ref: "Interaction",
-    },
-  ],
+  age: {
+    type: Number,
+  },
 });
 
 const Planet = model("Planet", planetSchema);
