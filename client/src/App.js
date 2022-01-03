@@ -3,6 +3,7 @@ import Nav from './components/Nav';
 import Pet from './components/Pet';
 import { useState } from 'react';
 import { Rainfall, Volcano, Sunlight, Wind } from './components/Interactions'
+import Stat from './components/Stat';
 
 function App() {
 
@@ -18,10 +19,10 @@ function App() {
           Tomodachi
         </h1>
         <ul>
-          <li>Stat 1</li>
-          <li>Stat 2</li>
-          <li>Stat 3</li>
-          <li>Stat 4</li>
+          <Stat stat={'biosphere'}/>
+          <Stat stat={'hydrosphere'}/>
+          <Stat stat={'lithosphere'}/>
+          <Stat stat={'atmosphere'}/>
         </ul>
         <Pet animation={animation} changeAnimation={changeAnimation} />
         <div className='button-container'>
