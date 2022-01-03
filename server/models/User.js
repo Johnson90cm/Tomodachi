@@ -1,5 +1,6 @@
 const { Schema, model } = require("mongoose");
 const bcrypt = require("bcrypt");
+const mongoose = require('mongoose');
 
 const planetSchema = new Schema({
   planetName: {
