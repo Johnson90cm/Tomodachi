@@ -1,6 +1,35 @@
 const { Schema, model } = require("mongoose");
 const bcrypt = require("bcrypt");
 
+const planetSchema = new Schema({
+  planetName: {
+    type: String,
+    required: true,
+    unique: true,
+    trim: true,
+  },
+  biosphere: {
+    type: Number,
+    default: 0
+  },
+  hydrosphere: {
+    type: Number,
+    default: 0
+  },
+  lithosphere: {
+    type: Number,
+    default: 0
+  },
+  atmosphere: {
+    type: Number,
+    default: 0
+  },
+  age: {
+    type: Number,
+    default: 0
+  },
+});
+
 const userSchema = new Schema({
   username: {
     type: String,
@@ -20,12 +49,7 @@ const userSchema = new Schema({
     required: true,
     minlength: 5,
   },
-  savedPlanets: [
-    {
-      type: Schema.Types.ObjectId,
-      ref: "Planet",
-    },
-  ],
+  savedPlanets: [planetSchema],
 });
 
 // set up pre-save middleware to create password

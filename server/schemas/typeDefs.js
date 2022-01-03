@@ -5,18 +5,19 @@ const { gql } = require("apollo-server-express");
 // create our typeDefs = defining data/endpoint
 const typeDefs = gql`
   type User {
-    _id: ID
-    username: String
-    email: String
+    _id: ID!
+    username: String!
+    email: String!
+    savedPlanets: [Planet]
   }
   type Planet {
     _id: ID
-    planetname: String!
-    biosphere: Int
-    hydrosphere: Int
-    lithosphere: Int
-    atmosphere: Int
-    age: Int
+    planetName: String!
+    biosphere: Int!
+    hydrosphere: Int!
+    lithosphere: Int!
+    atmosphere: Int!
+    age: Int!
   }
   type Auth {
     token: ID!
@@ -30,6 +31,7 @@ const typeDefs = gql`
   type Mutation {
     login(email: String!, password: String!): Auth
     addUser(username: String!, email: String!, password: String!): Auth
+    createPlanet(planetName: String!): User
   }
 `;
 

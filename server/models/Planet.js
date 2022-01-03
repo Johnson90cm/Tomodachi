@@ -1,7 +1,7 @@
 const { Schema, model } = require("mongoose");
 
 const planetSchema = new Schema({
-  planetname: {
+  planetName: {
     type: String,
     required: true,
     unique: true,
