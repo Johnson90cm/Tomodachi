@@ -32,7 +32,10 @@ const typeDefs = gql`
     login(email: String!, password: String!): Auth
     addUser(username: String!, email: String!, password: String!): Auth
     createPlanet(planetName: String!): User
-    rainfall(planetId: String!, bio: Int!, hydro: Int!, litho: Int!): User
+    rainfall(planetId: String!, hydro: Int!, bio: Int!, litho: Int!): User
+    volcano(planetId: String!, hydro: Int!, bio: Int!, litho: Int!, atmo: Int!): User
+    sunlight(planetId: String!, hydro: Int!, bio: Int!, atmo: Int!): User
+    wind(planetId: String!, bio: Int!, atmo: Int!): User
   }
 `;
 
