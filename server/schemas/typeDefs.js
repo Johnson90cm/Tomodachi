@@ -8,15 +8,16 @@ const typeDefs = gql`
     _id: ID
     username: String
     email: String
+    savedPlanets: Planet
   }
   type Planet {
     _id: ID
-    planetname: String!
-    biosphere: Int
-    hydrosphere: Int
-    lithosphere: Int
-    atmosphere: Int
-    age: Int
+    planetName: String!
+    biosphere: Int!
+    hydrosphere: Int!
+    lithosphere: Int!
+    atmosphere: Int!
+    age: Int!
   }
   type Auth {
     token: ID!
@@ -26,10 +27,12 @@ const typeDefs = gql`
     me: User
     users: [User]
     user(username: String!): User
+    planets: Planet
   }
   type Mutation {
     login(email: String!, password: String!): Auth
     addUser(username: String!, email: String!, password: String!): Auth
+    createPlanet(planetName: String!, biosphere: Int!, hydrosphere: Int!, lithosphere: Int!, atmosphere: Int!, age: Int!): User
   }
 `;
 
