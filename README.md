@@ -39,7 +39,7 @@ Tomodachi is a creation simulation game developed by four budding developers in 
 
 ## Contributors
 * SadboiTay - Taylor Hakes
-* aeforbush - Aimee Forbush
+* [![Aimee Forbush](https://github.com/aeforbush)]
 * Johnson90cm - Colton Johnson
 * michaelheinhold - Michael Heinhold
 * sunrisedad - Sheldon Collins
