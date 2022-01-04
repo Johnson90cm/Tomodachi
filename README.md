@@ -13,9 +13,8 @@
 Tomodachi is a creation simulation game developed by four budding developers in late 2021.  The game begins with the player naming their planet.  Once the player establishes their planet they then interact with the planets Biospheres through four interactions: Rainfall, Volcano, Sunlight, and Wind.  To win the game, the user must create a balanced bio system where the planet is ready to sustain life.  But, watch out! Too little or too much of an interaction can easily thrawrt an emerging planet into another planet altogether!  Play Tomodachi and see what you can create! 
 
 ## Table of Contents
-* [Image](#Image)
+* [ScreenShot](#Screenshot)
 * [Deployed Site](#Deployedsite)
-* [Installation](#Installation)
 * [Future Development](#Futuredevelopment)
 * [Contributors](#Contributors)
 * [GitHub](#GitHub)
@@ -24,12 +23,6 @@ Tomodachi is a creation simulation game developed by four budding developers in 
 ## Image
 
 ## Deployed Site
-
-## Installation
-
-* Clone this repository to your machine.
-* Run `npm install` to install all dependencies needed for this project to run.
-
 
 ## License
 [![License](https://img.shields.io/badge/license-MIT-green)](./LICENSE)
