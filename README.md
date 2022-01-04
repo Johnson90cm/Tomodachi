@@ -38,8 +38,8 @@ Tomodachi is a creation simulation game developed by four budding developers in 
 * GitHub: (https://github.com/Johnson90cm/Tomodachi)
 
 ## Contributors
-* SadboiTay - Taylor Hakes
+* [Taylor Hakes](https://github.com/sadboitay)
 * [Aimee Forbush](https://github.com/aeforbush)
-* Johnson90cm - Colton Johnson
-* michaelheinhold - Michael Heinhold
-* sunrisedad - Sheldon Collins
+* [Colton Johnson](https://github.com/johnson90cm)
+* [Michael Heinhold](https://github.com/michaelheinhold)
+* [Sheldon Collins](https://github.com/sunrisedad)
