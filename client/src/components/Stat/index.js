@@ -16,7 +16,19 @@ function Stat(props) {
     }
 
     if(data) {
+        const atmosphere = data.savedPlanets.atmosphere;
+        const biosphere = data.savedPlanets.biosphere;
+        const hydrosphere = data.savedPlanets.hydrosphere;
+        const lithosphere = data.savedPlanets.lithosphere
         statNumber = data.savedPlanets[stat]
+        if(data.savedPlanets.age >= 2000000) {
+            const statTotals = atmosphere + 
+                biosphere + 
+                hydrosphere + 
+                lithosphere;
+
+            
+        }
     }  
 
     return (
