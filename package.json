@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "# Contributors * SadboiTay - Taylor Hakes * aeforbush - Aimee Forbush * Johnson90cm - Colton Johnson * michaelheinhold - Michael Heinhold * sunrisedad - Sheldon Collins",
   "main": "index.js",
-  
   "dependencies": {},
   "devDependencies": {
     "concurrently": "^7.0.0"
