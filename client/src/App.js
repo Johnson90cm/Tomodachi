@@ -1,9 +1,9 @@
 import './App.css';
-import Nav from './components/Nav';
 import Pet from './components/Pet';
 import { useState } from 'react';
 import { Rainfall, Volcano, Sunlight, Wind } from './components/Interactions'
 import Stat from './components/Stat';
+import Login from './pages/Login';
 
 function App() {
 
@@ -14,10 +14,10 @@ function App() {
   return (
     <div className="wrapper">
       <div className='container box'>
-        <Nav />
         <h1>
           Tomodachi
         </h1>
+        <Login />
         <div>
         <ul className='stat-container'>
           <Stat stat={'biosphere'}/>
