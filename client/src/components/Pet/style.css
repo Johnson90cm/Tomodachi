@@ -1,13 +1,30 @@
 .tomodachi {
-    height: 300px;
-    width: 100%;
+    height: 45vh;
+    width: 33vh;
     margin: 2rem;
-    width: 200px;
     border-radius: 5px;
     box-shadow: 8px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
-/* Possible use: add a text gradient with keyframes */
+/* Ipad Media Queries */
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
+	.tomodachi {
+		height: 45vh;
+		width: 33vh;
+	}
+  }
+  
+  /* Iphone Media Queries */
+  
+  @media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) {
+	.tomodachi {
+		height: 45vh;
+		width: 33vh;
+	}
+  }
+
+/* Possible use:  add a text gradient with keyframes */
 /* .textgradient {
 	background: linear-gradient(-45deg, #ff0000, #00ff2a, #0004ff, #ff00d4);
 	background-size: 300%;

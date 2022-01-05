@@ -1,8 +1,9 @@
 import React from 'react';
-import { useQuery } from '@apollo/client';
-import { QUERY_ME } from '../../utils/queries';
+// import { useQuery } from '@apollo/client';
+// import { QUERY_ME } from '../../utils/queries';
 
 function Stat(props) {
+
     const { stat } = props
 
     // const { loading, data } = useQuery(QUERY_ME)
@@ -18,7 +19,7 @@ function Stat(props) {
     // }  
 
     return (
-        <li>{stat} 50</li>
+        <li className='stat-text'>{stat} 50</li>
     );
 }
 
