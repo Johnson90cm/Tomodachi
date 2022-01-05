@@ -1,8 +1,13 @@
 import React from "react";
 import { randomStatGenerator } from "../../utils/helpers";
+import { RAINFALL } from '../../utils/mutations'
+import { useMutation } from '@apollo/client'
 
 function Rainfall(props) {
     // Need to grab planet's stats from db with useQuery
+
+    //set up function for updating stats
+    const [rainfallMutation, {error} ] = useMutation(RAINFALL);
 
     // Handle the button click and stat manipulation with this function
     function rainfallHandler() {
@@ -21,6 +26,14 @@ function Rainfall(props) {
             const lithoStatAddition = randomStatGenerator(-50, -75)
 
             // instead of logging this random stat value, eventually add it to the db with a mutation
+            
+            try {
+                rainfallMutation('michael', bioStatAddition, hydroStatAddition, lithoStatAddition)
+            } catch (e) {
+                console.error(e)
+            }
+            
+
             console.log(`Rainfall..
                 Hydrosphere increases: ${hydroStatAddition}
                 Biosphere increases: ${bioStatAddition}
@@ -37,6 +50,7 @@ function Rainfall(props) {
             const lithoStatAddition = randomStatGenerator(-100, -125)
 
             // instead of logging this random stat value, eventually add it to the db with a mutation
+            
             console.log(`Severe Storms!
                 Hydrosphere increases: ${hydroStatAddition}
                 Biosphere increases: ${bioStatAddition}
