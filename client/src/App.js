@@ -5,6 +5,7 @@ import { Rainfall, Volcano, Sunlight, Wind } from './components/Interactions'
 import Stat from './components/Stat';
 import Login from './pages/Login';
 
+
 function App() {
 
   const [animation, changeAnimation] = useState('calm');
