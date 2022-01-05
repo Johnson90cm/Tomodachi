@@ -35,4 +35,4 @@ Tomodachi is a creation simulation game developed by four budding developers in 
 * [Sheldon Collins](https://github.com/sunrisedad)
 
 ## License
-[![License](https://img.shields.io/github/license/MIT/Johnson90cm/Tomodachi?style=for-the-badge&logo=MITLicense&logoColor=blue)](./LICENSE)
+[![License](https://img.shields.io/github/license/Johnson90cm/Tomodachi?style=for-the-badge&logo=MIT)](./LICENSE)
