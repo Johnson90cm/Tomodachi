@@ -5,20 +5,22 @@ import { QUERY_ME } from '../../utils/queries';
 function Stat(props) {
     const { stat } = props
 
-    // const { loading, data } = useQuery(QUERY_ME)
+    const { loading, data } = useQuery(QUERY_ME)
 
-    // if(loading) {
-    //     return(
-    //         <li>Loading..</li>
-    //     )
-    // }
+    let statNumber;
 
-    // if(data) {
-    //     console.log(data)
-    // }  
+    if(loading) {
+        return(
+            <li>Loading..</li>
+        )
+    }
+
+    if(data) {
+        statNumber = data.savedPlanets[stat]
+    }  
 
     return (
-        <li>{stat} 50</li>
+        <li>{stat} {statNumber}</li>
     );
 }
 

@@ -9,8 +9,6 @@ function App() {
 
   const [animation, changeAnimation] = useState('calm');
 
-
-
   return (
     <div className="wrapper">
       <div className='container box'>
@@ -23,6 +21,7 @@ function App() {
           <Stat stat={'hydrosphere'}/>
           <Stat stat={'lithosphere'}/>
           <Stat stat={'atmosphere'}/>
+          <Stat stat={'age'}/>
         </ul>
         <Pet animation={animation} changeAnimation={changeAnimation} />
         <div className='button-container'>
