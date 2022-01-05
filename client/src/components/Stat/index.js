@@ -1,6 +1,6 @@
 import React from 'react';
-// import { useQuery } from '@apollo/client';
-// import { QUERY_ME } from '../../utils/queries';
+import { useQuery } from '@apollo/client';
+import { QUERY_ME } from '../../utils/queries';
 
 function Stat(props) {
 
@@ -8,6 +8,8 @@ function Stat(props) {
     const { changeAnimation } = props
 
     const { loading, data } = useQuery(QUERY_ME)
+
+    let statNumber;
 
     if(loading) {
         return(
