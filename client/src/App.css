@@ -73,7 +73,7 @@ button {
   background-color: var(--purple);
   color: var(--grey);
   font-family: "Press Start 2P", cursive;
-  font-size: 7px;
+  font-size: 13px;
 }
 
 button:hover {
@@ -130,6 +130,7 @@ button:active {
     width: 6.20rem;
     margin: 0.5rem;
     padding: 0.5rem;
+    font-size: 9px;
   }
 
   ul {
