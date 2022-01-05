@@ -11,19 +11,19 @@ function Pet(props) {
         switch (props.animation) {
         case 'rainfall':
             console.log('cool rainfall animation');
-            setTimeout(() => { props.changeAnimation('calm') }, 2000)
+            setTimeout(() => { props.changeAnimation('calm') }, 4000)
             return Rainfall;
         case 'sunlight':
             console.log('cool sunlight animation');
-            setTimeout(() => { props.changeAnimation('calm') }, 2000)
+            setTimeout(() => { props.changeAnimation('calm') }, 4000)
             break
         case 'volcanoes':
             console.log('cool volcanoes animation');
-            setTimeout(() => { props.changeAnimation('calm') }, 2000)
+            setTimeout(() => { props.changeAnimation('calm') }, 4000)
             return Fires;
         case 'wind':
             console.log('cool wind animation');
-            setTimeout(() => { props.changeAnimation('calm') }, 2000)
+            setTimeout(() => { props.changeAnimation('calm') }, 4000)
             return Tornado;
         default:
             console.log('cool calm animation')
