@@ -21,13 +21,18 @@ function Stat(props) {
         const hydrosphere = data.savedPlanets.hydrosphere;
         const lithosphere = data.savedPlanets.lithosphere
         statNumber = data.savedPlanets[stat]
+
+        //checks if planet has reached max age
         if(data.savedPlanets.age >= 2000000) {
+            //gets a total score to determine percentages
             const statTotals = atmosphere + 
                 biosphere + 
                 hydrosphere + 
                 lithosphere;
 
-            
+            if (atmosphere > statTotals * .35 && atmosphere > biosphere && hydrosphere && lithosphere) {
+                changeAnimation('endgame-atmo')
+            }
         }
     }  
 
