@@ -4,6 +4,11 @@ import Rainfall from "../../assets/flood.gif";
 import Volcanos from '../../assets/volcanos.gif';
 import Tornado from '../../assets/tornado.gif'
 import Sunlight from '../../assets/sunlight.gif'
+import EndgameAtmo from '../../assets/wind-planet.gif'
+import EndgameBio from '../../assets/fires.gif'
+import EndgameHydro from '../../assets/water-planet.gif'
+import EndgameLitho from '../../assets/desert-planet.gif'
+import EndgameGood from '../../assets/good-ending.gif'
 import './style.css'
 
 function Pet(props) {
@@ -11,23 +16,28 @@ function Pet(props) {
     const renderAnimation = () => {
         switch (props.animation) {
         case 'rainfall':
-            console.log('cool rainfall animation');
             setTimeout(() => { props.changeAnimation('calm') }, 5000)
             return Rainfall;
         case 'sunlight':
-            console.log('cool sunlight animation');
             setTimeout(() => { props.changeAnimation('calm') }, 10000)
             return Sunlight;
         case 'volcanoes':
-            console.log('cool volcanoes animation');
             setTimeout(() => { props.changeAnimation('calm') }, 5000)
             return Volcanos;
         case 'wind':
-            console.log('cool wind animation');
             setTimeout(() => { props.changeAnimation('calm') }, 5000)
             return Tornado;
+        case 'endgame-bio':
+            return EndgameBio;
+        case 'endgame-atmo':
+            return EndgameAtmo;
+        case 'endgame-hydro':
+            return EndgameHydro;
+        case 'endgame=litho':
+            return EndgameLitho;
+        case 'endgame-good':
+            return EndgameGood;
         default:
-            console.log('cool calm animation')
             return Calm;
         }
     }

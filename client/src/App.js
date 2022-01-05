@@ -21,10 +21,10 @@ function App() {
         <Login />
         <div>
         <ul className='stat-container'>
-          <Stat stat={'biosphere'}/>
-          <Stat stat={'hydrosphere'}/>
-          <Stat stat={'lithosphere'}/>
-          <Stat stat={'atmosphere'}/>
+          <Stat stat={'biosphere'} changeAnimation={changeAnimation} />
+          <Stat stat={'hydrosphere'} changeAnimation={changeAnimation} />
+          <Stat stat={'lithosphere'} changeAnimation={changeAnimation} />
+          <Stat stat={'atmosphere'} changeAnimation={changeAnimation} />
         </ul>
         </div>
         <Pet animation={animation} changeAnimation={changeAnimation} />
