@@ -4,6 +4,7 @@ import Pet from './components/Pet';
 import { useState } from 'react';
 import { Rainfall, Volcano, Sunlight, Wind } from './components/Interactions'
 import Stat from './components/Stat';
+import Login from './pages/Login'
 
 function App() {
 
