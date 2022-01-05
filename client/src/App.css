@@ -11,7 +11,7 @@ body {
   background-image: url(./assets/background.gif);
   background-color: rgb(69, 64, 114);
   background-size: 100% 105%;
-  height: 95vh;
+  height: 96vh;
   position: relative;
   font-family: "Press Start 2P", cursive;
   color: white;
@@ -44,11 +44,11 @@ body {
 /* Incase we wrap the buttons */
 .button-container {
   display: block;
-  width: 29%;
+  width: 50%;
 
   position: relative;
-  left: 217px;
-  bottom: 170px;
+  left: 153px;
+  bottom: 250px;
 }
 
 ul {
@@ -64,7 +64,8 @@ li {
 }
 
 button {
-  width: 4.5rem;
+  height: 3.0rem;
+  width: 8.5rem;
   margin: 0.5rem;
   padding: 0.5rem;
   border: 2px solid black;
@@ -92,16 +93,27 @@ button:active {
     background-size: 100% 106%;
   }
 
+  button {
+    height: 2.5rem;
+    width: 8rem;
+    margin: 0.5rem;
+    padding: 0.5rem;
+  }
+
+  ul {
+    display: block
+  }
+
   .box {
-    padding: 0;
-    height: 66%;
+    padding: 5%;
+    height: 85%;
     width: 75%;
   }
 
   .button-container {
-    width: 31%;
-    left: 199px;
-    bottom: 170px;
+    width: 55%;
+    left: 130px;
+    bottom: 235px;
   }
 
 }
@@ -110,8 +122,40 @@ button:active {
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) {
   body {
-    background-size: 100% 110%;
+    background-size: 130% 140%;
   }
+
+  button {
+    height: 2.5rem;
+    width: 6.20rem;
+    margin: 0.5rem;
+    padding: 0.5rem;
+  }
+
+  ul {
+    display: block
+  }
+
+  .stat-text {
+    font-size: 10px;
+  }
+
+  .container {
+  width: 32%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.box {
+  background-color: rgb(69, 64, 114);
+  border: 4px solid rgb(172, 172, 172);
+  padding: 2.5rem;
+  -webkit-box-shadow: inset 0 0 33px 5px rgba(0, 0, 0, 0.5);
+  box-shadow: inset 0 0 33px 5px rgba(0, 0, 0, 0.5);
+}
+
 
   .box {
     padding: 0;
@@ -120,9 +164,9 @@ button:active {
   }
 
   .button-container {
-    width: 53%;
-    left: 79px;
-    bottom: 170px;
+    width: 80%;
+    left: 34px;
+    bottom: 205px;
   }
 
 }

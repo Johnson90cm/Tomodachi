@@ -18,12 +18,14 @@ function App() {
         <h1>
           Tomodachi
         </h1>
-        <ul>
+        <div>
+        <ul className='stat-container'>
           <Stat stat={'biosphere'}/>
           <Stat stat={'hydrosphere'}/>
           <Stat stat={'lithosphere'}/>
           <Stat stat={'atmosphere'}/>
         </ul>
+        </div>
         <Pet animation={animation} changeAnimation={changeAnimation} />
         <div className='button-container'>
           <Rainfall changeAnimation={changeAnimation} />
