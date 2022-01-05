@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "description": "# Contributors * SadboiTay - Taylor Hakes * aeforbush - Aimee Forbush * Johnson90cm - Colton Johnson * michaelheinhold - Michael Heinhold * sunrisedad - Sheldon Collins",
   "main": "index.js",
-  "dependencies": {},
+  "dependencies": {
+    "jwt-decode": "^3.1.2",
+    "react-router-dom": "^6.2.1"
+  },
   "devDependencies": {
     "concurrently": "^7.0.0"
   },
