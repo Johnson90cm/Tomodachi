@@ -14,6 +14,9 @@ function Home() {
     // useState to grab the created planets ID for gameplay
     const [currentPlanet, setCurrentPlanet] = useState('')
 
+    // variable to set the endgame to true later on
+    const [endgame, setEndgame] = useState(false)
+
     useEffect(() => {
         if (data) {
             // grab last index in the users savedPlanets array (AKA planet that was just created)
@@ -37,21 +40,28 @@ function Home() {
                 hydrosphere +
                 lithosphere;
 
+                console.log(endgame)
+
             //checks if planet has reached max age
             if (currentPlanet.age >= 10000) {
+                //sets the engame boolean to true to remove buttons
+                setEndgame(true)
+
                 //checks to see if the stat is over 35% and the greatest stat to determine the endgame
                 //else has a good endgame
-                if (atmosphere > statTotals * .35 && atmosphere > biosphere && hydrosphere && lithosphere) {
-                    changeAnimation('endgame-atmo')
-                } else if (biosphere > statTotals * .35 && biosphere > atmosphere && hydrosphere && lithosphere) {
-                    changeAnimation('endgame-bio')
-                } else if (hydrosphere > statTotals * .35 && hydrosphere > biosphere && atmosphere && lithosphere) {
-                    changeAnimation('endgame-hydro')
-                } else if (lithosphere > statTotals * .35 && lithosphere > biosphere && hydrosphere && atmosphere) {
-                    changeAnimation('endgame-litho')
-                } else {
-                    changeAnimation('endgame-good')
-                }
+                setTimeout(() => {
+                    if (atmosphere > statTotals * .35 && atmosphere > biosphere && atmosphere > hydrosphere && atmosphere > lithosphere) {
+                        changeAnimation('endgame-atmo')
+                    } else if (biosphere > statTotals * .35 && biosphere > atmosphere && biosphere > hydrosphere && biosphere > lithosphere) {
+                        changeAnimation('endgame-bio')
+                    } else if (hydrosphere > statTotals * .35 && hydrosphere > biosphere && hydrosphere > atmosphere && hydrosphere > lithosphere) {
+                        changeAnimation('endgame-hydro')
+                    } else if (lithosphere > statTotals * .35 && lithosphere > biosphere && lithosphere > hydrosphere && lithosphere > atmosphere) {
+                        changeAnimation('endgame-litho')
+                    } else {
+                        changeAnimation('endgame-good')
+                    }
+                }, 5100)
             }
         }
     }, [data, currentPlanet]);
@@ -96,6 +106,12 @@ function Home() {
                     </ul>
                 </div>
                 <Pet animation={animation} changeAnimation={changeAnimation} />
+                {
+                endgame ? 
+                <div>
+                    Game Over
+                </div>
+                :
                 <div className='button-container'>
                     <Rainfall
                         changeAnimation={changeAnimation}
@@ -114,6 +130,7 @@ function Home() {
                         currentPlanet={currentPlanet}
                     />
                 </div>
+                }
             </>
         )
     }

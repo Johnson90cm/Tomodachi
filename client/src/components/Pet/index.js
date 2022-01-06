@@ -19,7 +19,7 @@ function Pet(props) {
             setTimeout(() => { props.changeAnimation('calm') }, 5000)
             return Rainfall;
         case 'sunlight':
-            setTimeout(() => { props.changeAnimation('calm') }, 10000)
+            setTimeout(() => { props.changeAnimation('calm') }, 5000)
             return Sunlight;
         case 'volcanoes':
             setTimeout(() => { props.changeAnimation('calm') }, 5000)

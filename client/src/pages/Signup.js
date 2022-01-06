@@ -21,7 +21,6 @@ function Signup(props) {
         Auth.login(token);
 
         console.log('yay')
-        window.location.replace('/start')
     };
 
     const handleChange = (event) => {
@@ -67,7 +66,7 @@ function Signup(props) {
                     />
                 </div>
                 <div className="flex-row flex-end">
-                    <button type="submit">Submit</button>
+                    <Link to='/start'><button type="submit">Submit</button></Link>
                 </div>
             </form>
             <Link to="/login">← Go to Login</Link>
