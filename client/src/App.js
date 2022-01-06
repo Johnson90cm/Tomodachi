@@ -44,9 +44,9 @@ function App() {
             </h1>
             {
               auth.loggedIn() ?
-                <div>true</div>
+                <div>Logged In</div>
                 :
-                <div>false</div>
+                <div>Not Logged In</div>
             }
             <Routes>
               {
