@@ -32,8 +32,6 @@ function App() {
     auth.logout()
   }
 
-  console.log(auth.loggedIn())
-
   return (
     <ApolloProvider client={client}>
       <Router>
@@ -44,17 +42,14 @@ function App() {
             </h1>
             {
               auth.loggedIn() ?
-                <div>Logged In</div>
+                <div>Logged In!</div>
                 :
-                <div>Not Logged In</div>
+                <div>Please Log In</div>
             }
             <Routes>
-              {
-                auth.loggedIn() ?
-                  <Route exact path='/start' element={<Start />} />
-                  :
-                  <Route exact path='/login' element={<Login />} />
-              }
+              <Route exact path='/start' element={<Start />} />
+              <Route exact path='/' element={<Login />} />
+              <Route exact path='/login' element={<Login />} />
               <Route exact path='/signup' element={<Signup />} />
               <Route exact path='/home' element={<Home />} />
             </Routes>

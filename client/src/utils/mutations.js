@@ -38,6 +38,7 @@ export const CREATE_PLANET = gql`
             username
             savedPlanets {
                 planetName
+                _id
 			}
         }
     }

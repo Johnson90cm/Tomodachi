@@ -25,6 +25,7 @@ export const QUERY_ME = gql`
         username
         savedPlanets {
             planetName
+            _id
             atmosphere
             biosphere
             hydrosphere

@@ -21,7 +21,7 @@ function Signup(props) {
         Auth.login(token);
 
         console.log('yay')
-        window.location.replace('/')
+        window.location.replace('/start')
     };
 
     const handleChange = (event) => {
@@ -39,7 +39,7 @@ function Signup(props) {
                 <div className="flex-row space-between my-2">
                     <label htmlFor="username">Username:</label>
                     <input
-                        placeholder="First"
+                        placeholder="planetmaker"
                         name="username"
                         type="username"
                         id="username"
