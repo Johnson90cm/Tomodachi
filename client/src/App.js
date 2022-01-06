@@ -6,12 +6,22 @@ import Stat from './components/Stat';
 import Login from './pages/Login';
 import { ApolloProvider, ApolloClient, InMemoryCache, createHttpLink } from '@apollo/client';
 
+const authLink = setContext((_, { header }) => {
+  const token = localStorage.getItem("id_token");
+  return {
+    headers: {
+      ...header,
+      authorization: token ? `Bearer ${token}` : "",
+    },
+  };
+});
+
 const httpLink = createHttpLink({
   uri: '/graphql',
 });
 
 const client = new ApolloClient({
-  link: httpLink,
+  link: authLink.concat(httpLink),
   cache: new InMemoryCache(),
 });
 
