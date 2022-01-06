@@ -18,7 +18,7 @@ function App() {
         <h1>
           Tomodachi
         </h1>
-        <Login />
+        {/* <Login /> */}
         <div>
         <ul className='stat-container'>
           <Stat stat={'biosphere'}/>

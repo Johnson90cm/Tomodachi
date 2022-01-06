@@ -33,8 +33,9 @@ function Pet(props) {
     }
 
     return (
-        <div className="wrapper">
+        <div>
             <img src={renderAnimation()} className="tomodachi" alt="This will display an animated GIF" />
+            <span className="interaction-text">VOLCANOS ERUPT ALL OVER THE PLANET!!!</span>
         </div>
     )
 }

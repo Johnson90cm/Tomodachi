@@ -48,7 +48,7 @@ body {
 
   position: relative;
   left: 153px;
-  bottom: 250px;
+  bottom: 325px;
 }
 
 ul {
@@ -64,7 +64,7 @@ li {
 }
 
 button {
-  height: 3.0rem;
+  height: 3rem;
   width: 8.5rem;
   margin: 0.5rem;
   padding: 0.5rem;
@@ -101,7 +101,7 @@ button:active {
   }
 
   ul {
-    display: block
+    display: block;
   }
 
   .box {
@@ -113,9 +113,8 @@ button:active {
   .button-container {
     width: 55%;
     left: 130px;
-    bottom: 235px;
+    bottom: 300px;
   }
-
 }
 
 /* Iphone Media Queries */
@@ -127,36 +126,19 @@ button:active {
 
   button {
     height: 2.5rem;
-    width: 6.20rem;
+    width: 6.2rem;
     margin: 0.5rem;
     padding: 0.5rem;
     font-size: 9px;
   }
 
   ul {
-    display: block
+    display: block;
   }
 
   .stat-text {
     font-size: 10px;
   }
-
-  .container {
-  width: 32%;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.box {
-  background-color: rgb(69, 64, 114);
-  border: 4px solid rgb(172, 172, 172);
-  padding: 2.5rem;
-  -webkit-box-shadow: inset 0 0 33px 5px rgba(0, 0, 0, 0.5);
-  box-shadow: inset 0 0 33px 5px rgba(0, 0, 0, 0.5);
-}
-
 
   .box {
     padding: 0;
@@ -167,9 +149,8 @@ button:active {
   .button-container {
     width: 80%;
     left: 34px;
-    bottom: 205px;
+    bottom: 250px;
   }
-
 }
 
 /* .App {

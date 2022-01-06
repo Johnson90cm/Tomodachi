@@ -6,6 +6,12 @@
     box-shadow: 8px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
+.interaction-text {
+	display: block;
+	font-size: 25px;
+	line-height: 1.5;
+  }
+
 /* Ipad Media Queries */
 
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
@@ -13,6 +19,11 @@
 		height: 45vh;
 		width: 33vh;
 	}
+
+	.interaction-text {
+		font-size: 20px;
+	  }
+
   }
   
   /* Iphone Media Queries */
@@ -22,6 +33,11 @@
 		height: 45vh;
 		width: 33vh;
 	}
+
+	.interaction-text {
+		font-size: 15px;
+	  }
+
   }
 
 /* Possible use:  add a text gradient with keyframes */
