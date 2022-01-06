@@ -145,7 +145,7 @@ function Home() {
                         </div>
                 }
                 {
-                    <div>
+                    <div className="interaction-text">
                         {description}
                     </div>
                 }
