@@ -8,9 +8,6 @@ function Start() {
 
     const [formState, setFormState] = useState('');
 
-    // useState to grab the created planets ID for gameplay
-    const [currentPlanet, setCurrentPlanet] = useState('')
-
     async function handleStartSubmit(e) {
         e.preventDefault()
 
@@ -21,16 +18,6 @@ function Start() {
                 }
 
             })
-            // grab last index in the users savedPlanets array (AKA planet that was just created)
-            const currentPlanetIndex = mutationResponse.data.createPlanet.savedPlanets.length -1
-
-            // grab the id of that planet from that index
-            const currentPlanetId = mutationResponse.data.createPlanet.savedPlanets[currentPlanetIndex]._id
-
-            // set the planet that was created to the current planet for gameplay
-            setCurrentPlanet(currentPlanetId)
-
-            console.log(currentPlanet)
         } catch (error) {
             console.log(error)
         }
