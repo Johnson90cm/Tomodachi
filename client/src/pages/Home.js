@@ -49,17 +49,19 @@ function Home() {
 
                 //checks to see if the stat is over 35% and the greatest stat to determine the endgame
                 //else has a good endgame
-                if (atmosphere > statTotals * .35 && atmosphere > biosphere && atmosphere > hydrosphere && atmosphere > lithosphere) {
-                    changeAnimation('endgame-atmo')
-                } else if (biosphere > statTotals * .35 && biosphere > atmosphere && biosphere > hydrosphere && biosphere > lithosphere) {
-                    changeAnimation('endgame-bio')
-                } else if (hydrosphere > statTotals * .35 && hydrosphere > biosphere && hydrosphere > atmosphere && hydrosphere > lithosphere) {
-                    changeAnimation('endgame-hydro')
-                } else if (lithosphere > statTotals * .35 && lithosphere > biosphere && lithosphere > hydrosphere && lithosphere > atmosphere) {
-                    changeAnimation('endgame-litho')
-                } else {
-                    changeAnimation('endgame-good')
-                }
+                setTimeout(() => {
+                    if (atmosphere > statTotals * .35 && atmosphere > biosphere && atmosphere > hydrosphere && atmosphere > lithosphere) {
+                        changeAnimation('endgame-atmo')
+                    } else if (biosphere > statTotals * .35 && biosphere > atmosphere && biosphere > hydrosphere && biosphere > lithosphere) {
+                        changeAnimation('endgame-bio')
+                    } else if (hydrosphere > statTotals * .35 && hydrosphere > biosphere && hydrosphere > atmosphere && hydrosphere > lithosphere) {
+                        changeAnimation('endgame-hydro')
+                    } else if (lithosphere > statTotals * .35 && lithosphere > biosphere && lithosphere > hydrosphere && lithosphere > atmosphere) {
+                        changeAnimation('endgame-litho')
+                    } else {
+                        changeAnimation('endgame-good')
+                    }
+                }, 5100)
             }
         }
     }, [data, currentPlanet]);
