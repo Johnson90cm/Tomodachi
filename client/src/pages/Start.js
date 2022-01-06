@@ -1,12 +1,16 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useMutation } from '@apollo/client';
 import { CREATE_PLANET } from '../utils/mutations';
+import { Redirect } from 'react-router-dom';
+
 
 // function logic here
 function Start() {
     const [createPlanet, { error }] = useMutation(CREATE_PLANET);
 
     const [formState, setFormState] = useState('');
+
+    const [Go, setGo] = useState(false);
 
     async function handleStartSubmit(e) {
         e.preventDefault()
@@ -16,13 +20,13 @@ function Start() {
                 variables: {
                     planetName: formState.planetName
                 }
-
             })
+
+            console.log(mutationResponse)
+            setGo(true);
         } catch (error) {
             console.log(error)
         }
-
-        window.location.replace('/home')
     }
 
     const handleChange = (event) => {
@@ -43,6 +47,7 @@ function Start() {
                     onChange={handleChange}
                 />
                 <button onClick={handleStartSubmit}>Begin</button>
+                {Go && <Redirect to='/home' />}
             </form>
             <h2>
                 Keep your planet alive by balancing your stats until the end of the game!
