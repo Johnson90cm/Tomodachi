@@ -31,7 +31,7 @@ function Sunlight(props) {
                 console.error(e)
             }
             
-            changeDescription('The sun shines a little brighter...')
+            changeDescription('Sunbeams warm the sky.')
         }
 
         if (diceRoll >= 76 && diceRoll <= 95) {
@@ -49,7 +49,7 @@ function Sunlight(props) {
                 console.error(e)
             }
             
-            changeDescription('The whole planet warms a little!')
+            changeDescription('Intense sunlight shines down!')
         }
 
         if (diceRoll >= 96 && diceRoll <= 100) {
@@ -67,7 +67,7 @@ function Sunlight(props) {
                 console.error(e)
             }
             
-            changeDescription('Extreme sunlight causes all vegetation to explode with growth!')
+            changeDescription('Extreme sunlight causes all vegetation to explode with growth!!!')
         }
     }
 

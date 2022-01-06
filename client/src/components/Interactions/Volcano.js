@@ -30,7 +30,7 @@ function Volcano(props) {
                 console.error(e)
             }
             
-            changeDescription('Volcanoes erupt...')
+            changeDescription('Volcanoes erupt all around.')
         }
 
         if (diceRoll >= 76 && diceRoll <= 95) {
@@ -49,7 +49,7 @@ function Volcano(props) {
                 console.error(e)
             }
             
-            changeDescription('Severe Eruptions!!!')
+            changeDescription('Severe eruptions form new islands!')
         }
 
         if (diceRoll >= 96 && diceRoll <= 100) {
@@ -68,7 +68,7 @@ function Volcano(props) {
                 console.error(e)
             }
             
-            changeDescription('Massive volcanoes terraform the planet!!!!!')
+            changeDescription('Massive super-volcanoes terraform the planet!!!')
         }
     }
 
