@@ -21,7 +21,6 @@ function Login(props) {
         }
 
         console.log('yay')
-        window.location.replace('/start')
     };
 
     const handleChange = (event) => {
@@ -62,7 +61,7 @@ function Login(props) {
                     </div>
                 ) : null}
                 <div className="flex-row flex-end">
-                    <button type="submit">Submit</button>
+                    <Link to='/start'><button type="submit">Submit</button></Link>
                 </div>
             </form>
             <Link to="/signup">← Go to Signup</Link>
