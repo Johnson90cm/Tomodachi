@@ -48,12 +48,17 @@ function Home() {
                         currentPlanet={currentPlanet}
                     />
                     <Stat 
-                        statName={'lihthosphere'} 
+                        statName={'lithosphere'} 
                         changeAnimation={changeAnimation}
                         currentPlanet={currentPlanet}
                     />
                     <Stat 
                         statName={'atmosphere'} 
+                        changeAnimation={changeAnimation}
+                        currentPlanet={currentPlanet}
+                    />
+                    <Stat 
+                        statName={'age'} 
                         changeAnimation={changeAnimation}
                         currentPlanet={currentPlanet}
                     />
