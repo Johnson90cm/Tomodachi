@@ -11,6 +11,8 @@ function Home() {
 
     const { loading, data } = useQuery(QUERY_ME)
 
+    const [disabled, changeDisabled] = useState(false)
+
     // useState to grab the created planets ID for gameplay
     const [currentPlanet, setCurrentPlanet] = useState('')
 
@@ -41,8 +43,6 @@ function Home() {
                 biosphere +
                 hydrosphere +
                 lithosphere;
-
-            console.log(endgame)
 
             //checks if planet has reached max age
             if (currentPlanet.age >= 1000) {
@@ -114,11 +114,21 @@ function Home() {
                                 currentPlanet={currentPlanet}
                             />
                         </div>
-                <Pet animation={animation} changeAnimation={changeAnimation} />
+                <Pet animation={animation} changeAnimation={changeAnimation} changeDisabled={changeDisabled} />
                 {
                     endgame ?
-                        <div className="game-over-text">
-                            Game Over
+                        <div>
+                            <div className="game-over-text">
+                                Game Over
+                            </div>
+                            <div>
+                                {description}
+                            </div>
+                        </div>
+                        :
+                        disabled ? 
+                        <div>
+                            {description}
                         </div>
                         :
                         <div className='button-container'>
@@ -126,28 +136,27 @@ function Home() {
                                 changeAnimation={changeAnimation}
                                 currentPlanet={currentPlanet}
                                 changeDescription={changeDescription}
+                                disabled={disabled && true}
                             />
                             <Volcano
                                 changeAnimation={changeAnimation}
                                 currentPlanet={currentPlanet}
                                 changeDescription={changeDescription}
+                                disabled={disabled && true}
                             />
                             <Sunlight
                                 changeAnimation={changeAnimation}
                                 currentPlanet={currentPlanet}
                                 changeDescription={changeDescription}
+                                disabled={disabled && true}
                             />
                             <Wind
                                 changeAnimation={changeAnimation}
                                 currentPlanet={currentPlanet}
                                 changeDescription={changeDescription}
+                                disabled={disabled && true}
                             />
                         </div>
-                }
-                {
-                    <div className="interaction-text">
-                        {description}
-                    </div>
                 }
             </>
         )
