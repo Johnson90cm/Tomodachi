@@ -8,6 +8,10 @@ import { ApolloProvider, ApolloClient, InMemoryCache, createHttpLink } from '@ap
 import { setContext } from '@apollo/client/link/context';
 import auth from './utils/auth';
 
+//  retrieve token from localStorage and include it with each API request
+import { setContext } from "@apollo/client/link/context";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+
 const authLink = setContext((_, { header }) => {
   const token = localStorage.getItem("id_token");
   return {
@@ -35,6 +39,7 @@ function App() {
 
   return (
     <ApolloProvider client={client}>
+      <Router>
       <div className="wrapper">
         <div className='container box'>
           <h1>
@@ -59,13 +64,12 @@ function App() {
             <Wind changeAnimation={changeAnimation} />
           </div>
           </>
-
           :
-          
           <Login />
           }
         </div>
       </div>
+      </Router>
     </ApolloProvider>
   );
 }
