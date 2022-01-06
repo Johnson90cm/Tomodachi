@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
 import Auth from '../utils/auth';
 import { ADD_USER } from '../utils/mutations';
@@ -7,6 +7,8 @@ import { ADD_USER } from '../utils/mutations';
 function Signup(props) {
     const [formState, setFormState] = useState({ email: '', password: '' });
     const [addUser] = useMutation(ADD_USER);
+
+    const [Go, setGo] = useState(false);
 
     const handleFormSubmit = async (event) => {
         event.preventDefault();
@@ -20,7 +22,7 @@ function Signup(props) {
         const token = mutationResponse.data.addUser.token;
         Auth.login(token);
 
-        console.log('yay')
+        setGo(true);
     };
 
     const handleChange = (event) => {
@@ -66,7 +68,8 @@ function Signup(props) {
                     />
                 </div>
                 <div className="flex-row flex-end">
-                    <Link to='/start'><button type="submit">Submit</button></Link>
+                    <button type="submit">Submit</button>
+                    {Go && <Redirect to='/start' />}
                 </div>
             </form>
             <Link to="/login">← Go to Login</Link>

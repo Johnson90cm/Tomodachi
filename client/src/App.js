@@ -1,10 +1,10 @@
 import './App.css';
-import Login from './pages/Login';
 import { ApolloProvider, ApolloClient, InMemoryCache, createHttpLink } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
 import auth from './utils/auth';
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
 import Home from './pages/Home';
+import Login from './pages/Login';
 import Signup from './pages/Signup';
 import Start from './pages/Start';
 
@@ -40,15 +40,17 @@ function App() {
             <h1>
               Tomodachi
             </h1>
-            {
+            {/* {
               auth.loggedIn() ?
                 <div>Logged In!</div>
                 :
                 <div>Please Log In</div>
-            }
+            } */}
             <Switch>
+              <Route exact path='/'>
+                {auth.loggedIn() ? <Start /> : <Login />}
+              </Route>
               <Route exact path='/start' component={Start} />
-              <Route exact path='/' component={Login} />
               <Route exact path='/login' component={Login} />
               <Route exact path='/signup'component={Signup} />
               <Route exact path='/home' component={Home} />
@@ -60,6 +62,5 @@ function App() {
     </ApolloProvider>
   );
 }
-
 
 export default App;
