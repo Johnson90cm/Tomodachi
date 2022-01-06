@@ -17,6 +17,8 @@ function Home() {
     // variable to set the endgame to true later on
     const [endgame, setEndgame] = useState(false)
 
+    const [description, changeDescription] = useState('Click one of the interactions to start')
+
     useEffect(() => {
         if (data) {
             // grab last index in the users savedPlanets array (AKA planet that was just created)
@@ -52,14 +54,19 @@ function Home() {
                 setTimeout(() => {
                     if (atmosphere > statTotals * .35 && atmosphere > biosphere && atmosphere > hydrosphere && atmosphere > lithosphere) {
                         changeAnimation('endgame-atmo')
+                        changeDescription('You finished with a Rocky Gaseous planet')
                     } else if (biosphere > statTotals * .35 && biosphere > atmosphere && biosphere > hydrosphere && biosphere > lithosphere) {
                         changeAnimation('endgame-bio')
+                        changeDescription('You finished with an Overgrown Mucky planet')
                     } else if (hydrosphere > statTotals * .35 && hydrosphere > biosphere && hydrosphere > atmosphere && hydrosphere > lithosphere) {
                         changeAnimation('endgame-hydro')
+                        changeDescription('You finished with a Flooded planet')
                     } else if (lithosphere > statTotals * .35 && lithosphere > biosphere && lithosphere > hydrosphere && lithosphere > atmosphere) {
                         changeAnimation('endgame-litho')
+                        changeDescription('You finished with a Firey Molten planet')
                     } else {
                         changeAnimation('endgame-good')
+                        changeDescription('You finished with a Perfect planet!! GREAT job!')
                     }
                 }, 5100)
             }
@@ -118,20 +125,29 @@ function Home() {
                             <Rainfall
                                 changeAnimation={changeAnimation}
                                 currentPlanet={currentPlanet}
+                                changeDescription={changeDescription}
                             />
                             <Volcano
                                 changeAnimation={changeAnimation}
                                 currentPlanet={currentPlanet}
+                                changeDescription={changeDescription}
                             />
                             <Sunlight
                                 changeAnimation={changeAnimation}
                                 currentPlanet={currentPlanet}
+                                changeDescription={changeDescription}
                             />
                             <Wind
                                 changeAnimation={changeAnimation}
                                 currentPlanet={currentPlanet}
+                                changeDescription={changeDescription}
                             />
                         </div>
+                }
+                {
+                    <div>
+                        {description}
+                    </div>
                 }
             </>
         )
