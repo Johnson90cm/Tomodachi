@@ -14,6 +14,9 @@ function Home() {
     // useState to grab the created planets ID for gameplay
     const [currentPlanet, setCurrentPlanet] = useState('')
 
+    // variable to set the endgame to true later on
+    const [endgame, setEndgame] = useState(false)
+
     useEffect(() => {
         if (data) {
             // grab last index in the users savedPlanets array (AKA planet that was just created)
@@ -37,8 +40,13 @@ function Home() {
                 hydrosphere +
                 lithosphere;
 
+                console.log(endgame)
+
             //checks if planet has reached max age
             if (currentPlanet.age >= 10000) {
+                //sets the engame boolean to true to remove buttons
+                setEndgame(true)
+
                 //checks to see if the stat is over 35% and the greatest stat to determine the endgame
                 //else has a good endgame
                 if (atmosphere > statTotals * .35 && atmosphere > biosphere && atmosphere > hydrosphere && atmosphere > lithosphere) {
@@ -96,6 +104,12 @@ function Home() {
                     </ul>
                 </div>
                 <Pet animation={animation} changeAnimation={changeAnimation} />
+                {
+                endgame ? 
+                <div>
+                    Game Over
+                </div>
+                :
                 <div className='button-container'>
                     <Rainfall
                         changeAnimation={changeAnimation}
@@ -114,6 +128,7 @@ function Home() {
                         currentPlanet={currentPlanet}
                     />
                 </div>
+                }
             </>
         )
     }
