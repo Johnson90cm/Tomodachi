@@ -14,9 +14,7 @@ function Start() {
 
         try {
             const mutationResponse = await createPlanet({
-                variables: {
-                    planetName: formState
-                }
+                variables: { planetName: formState.planetVariables }
             })
             console.log(mutationResponse)
         } catch (error) {
@@ -33,15 +31,17 @@ function Start() {
     };
 
     return (
-        <form>
-            <h1>Name your planet:</h1>
-            <input
-                type='text'
-                name='planetName'
-                onChange={handleChange}
-            />
-            <button onClick={handleStartSubmit}>Begin</button>
-        </form>
+        <div className="start-container">
+            <form>
+                <h1>Name your planet:</h1>
+                <input
+                    type='text'
+                    name='planetName'
+                    onChange={handleChange}
+                />
+                <button onClick={handleStartSubmit}>Begin</button>
+            </form>
+        </div>
     )
 }
 
