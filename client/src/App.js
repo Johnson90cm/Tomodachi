@@ -1,16 +1,11 @@
 import './App.css';
-import Pet from './components/Pet';
-import { useState } from 'react';
-import { Rainfall, Volcano, Sunlight, Wind } from './components/Interactions'
-import Stat from './components/Stat';
 import Login from './pages/Login';
 import { ApolloProvider, ApolloClient, InMemoryCache, createHttpLink } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
 import auth from './utils/auth';
-
-//  retrieve token from localStorage and include it with each API request
-import { setContext } from "@apollo/client/link/context";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Home from './pages/Home';
+import Signup from './pages/Signup';
 
 const authLink = setContext((_, { header }) => {
   const token = localStorage.getItem("id_token");
@@ -34,41 +29,25 @@ const client = new ApolloClient({
 console.log(auth.loggedIn())
 
 function App() {
-
-  const [animation, changeAnimation] = useState('calm');
-
   return (
     <ApolloProvider client={client}>
       <Router>
-      <div className="wrapper">
-        <div className='container box'>
-          <h1>
-            Tomodachi
-          </h1>
-          {
-          auth.loggedIn() ? 
-          <>
-          <div>
-          <ul className='stat-container'>
-            <Stat stat={'biosphere'} changeAnimation={changeAnimation} />
-            <Stat stat={'hydrosphere'} changeAnimation={changeAnimation} />
-            <Stat stat={'lithosphere'} changeAnimation={changeAnimation} />
-            <Stat stat={'atmosphere'} changeAnimation={changeAnimation} />
-          </ul>
+        <div className="wrapper">
+          <div className='container box'>
+            <h1>
+              Tomodachi
+            </h1>
+            <Routes>
+              {
+                auth.loggedIn() ?
+                  <Route exact path='/' element={<Home />} />
+                  :
+                  <Route exact path='/login' element={<Login />} />
+              }
+              <Route exact path='/signup' element={<Signup />} />
+            </Routes>
           </div>
-          <Pet animation={animation} changeAnimation={changeAnimation} />
-          <div className='button-container'>
-            <Rainfall changeAnimation={changeAnimation} />
-            <Volcano changeAnimation={changeAnimation} />
-            <Sunlight changeAnimation={changeAnimation} />
-            <Wind changeAnimation={changeAnimation} />
-          </div>
-          </>
-          :
-          <Login />
-          }
         </div>
-      </div>
       </Router>
     </ApolloProvider>
   );
