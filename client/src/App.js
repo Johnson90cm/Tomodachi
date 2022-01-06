@@ -5,6 +5,7 @@ import { Rainfall, Volcano, Sunlight, Wind } from './components/Interactions'
 import Stat from './components/Stat';
 import Login from './pages/Login';
 import { ApolloProvider, ApolloClient, InMemoryCache, createHttpLink } from '@apollo/client';
+import { setContext } from '@apollo/client/link/context';
 
 const authLink = setContext((_, { header }) => {
   const token = localStorage.getItem("id_token");
