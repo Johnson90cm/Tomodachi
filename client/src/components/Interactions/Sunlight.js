@@ -4,7 +4,8 @@ import { SUNLIGHT } from '../../utils/mutations'
 import { useMutation } from '@apollo/client'
 
 function Sunlight(props) {
-    // Need to grab planet's stats from db with useQuery
+    const { currentPlanet } = props;
+
     const [sunlightMutation, {error}] = useMutation(SUNLIGHT)
 
     // Handle the button click and stat manipulation with this function
@@ -25,7 +26,7 @@ function Sunlight(props) {
 
             // instead of logging this random stat value, eventually add it to the db with a mutation
             try {
-                sunlightMutation({variables: {planetName: 'michael', biosphere: bioStatAddition, hydrosphere: hydroStatAddition, atmosphere: atmoStatAddition}})
+                sunlightMutation({variables: {planetId: currentPlanet._id, bio: bioStatAddition, hydro: hydroStatAddition, atmo: atmoStatAddition}})
             } catch (e) {
                 console.error(e)
             }
@@ -47,7 +48,7 @@ function Sunlight(props) {
 
             // instead of logging this random stat value, eventually add it to the db with a mutation
             try {
-                sunlightMutation({variables: {planetName: 'michael', biosphere: bioStatAddition, hydrosphere: hydroStatAddition, atmosphere: atmoStatAddition}})
+                sunlightMutation({variables: {planetId: currentPlanet._id, bio: bioStatAddition, hydro: hydroStatAddition, atmo: atmoStatAddition}})
             } catch (e) {
                 console.error(e)
             }
@@ -69,7 +70,7 @@ function Sunlight(props) {
 
             // instead of logging this random stat value, eventually add it to the db value of the planet
             try {
-                sunlightMutation({variables: {planetName: 'michael', biosphere: bioStatAddition, hydrosphere: hydroStatAddition, atmosphere: atmoStatAddition}})
+                sunlightMutation({variables: {planetId: currentPlanet._id, bio: bioStatAddition, hydro: hydroStatAddition, atmo: atmoStatAddition}})
             } catch (e) {
                 console.error(e)
             }
@@ -80,8 +81,6 @@ function Sunlight(props) {
                 Hydrosphere decreases: ${hydroStatAddition}
                 `)
         }
-
-        // We'll also want to render the interaction animation here
     }
 
     return (

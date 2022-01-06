@@ -4,8 +4,6 @@ function Stat(props) {
 
     const { statName, changeAnimation, currentPlanet } = props
 
-    console.log(currentPlanet);
-
     let statNumber;
 
     const atmosphere = currentPlanet.atmosphere;
@@ -21,7 +19,7 @@ function Stat(props) {
         lithosphere;
 
     //checks if planet has reached max age
-    if (currentPlanet.age >= 2000000) {
+    if (currentPlanet.age >= 10000) {
         //checks to see if the stat is over 35% and the greatest stat to determine the endgame
         //else has a good endgame
         if (atmosphere > statTotals * .35 && atmosphere > biosphere && hydrosphere && lithosphere) {
