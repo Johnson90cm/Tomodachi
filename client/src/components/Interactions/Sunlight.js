@@ -1,8 +1,11 @@
 import React from "react";
 import { randomStatGenerator } from "../../utils/helpers";
+import { SUNLIGHT } from '../../utils/mutations'
+import { useMutation } from '@apollo/client'
 
 function Sunlight(props) {
     // Need to grab planet's stats from db with useQuery
+    const [sunlightMutation, {error}] = useMutation(SUNLIGHT)
 
     // Handle the button click and stat manipulation with this function
     function sungligtHandler() {
@@ -21,6 +24,12 @@ function Sunlight(props) {
             const hydroStatAddition = randomStatGenerator(-50, -75)
 
             // instead of logging this random stat value, eventually add it to the db with a mutation
+            try {
+                sunlightMutation('michael', bioStatAddition, hydroStatAddition, atmoStatAddition)
+            } catch (e) {
+                console.error(e)
+            }
+            
             console.log(`The sun shines a little brighter...
                 Biosphere increases: ${bioStatAddition}
                 Atmosphere increases: ${atmoStatAddition}
@@ -37,6 +46,12 @@ function Sunlight(props) {
             const hydroStatAddition = randomStatGenerator(-100, -125)
 
             // instead of logging this random stat value, eventually add it to the db with a mutation
+            try {
+                sunlightMutation('michael', bioStatAddition, hydroStatAddition, atmoStatAddition)
+            } catch (e) {
+                console.error(e)
+            }
+            
             console.log(`The whole planet warms a little!
                 Biosphere increases: ${bioStatAddition}
                 Atmosphere increases: ${atmoStatAddition}
@@ -53,6 +68,12 @@ function Sunlight(props) {
             const hydroStatAddition = randomStatGenerator(-300, -400)
 
             // instead of logging this random stat value, eventually add it to the db value of the planet
+            try {
+                sunlightMutation('michael', bioStatAddition, hydroStatAddition, atmoStatAddition)
+            } catch (e) {
+                console.error(e)
+            }
+            
             console.log(`Extreme sunlight causes all vegetation to explode with growth!
                 Biosphere increases: ${bioStatAddition}
                 Atmosphere increases: ${atmoStatAddition}
