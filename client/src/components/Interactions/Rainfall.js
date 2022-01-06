@@ -51,6 +51,12 @@ function Rainfall(props) {
 
             // instead of logging this random stat value, eventually add it to the db with a mutation
             
+            try {
+                rainfallMutation('michael', bioStatAddition, hydroStatAddition, lithoStatAddition)
+            } catch (e) {
+                console.error(e)
+            }
+
             console.log(`Severe Storms!
                 Hydrosphere increases: ${hydroStatAddition}
                 Biosphere increases: ${bioStatAddition}
@@ -67,6 +73,12 @@ function Rainfall(props) {
             const lithoStatAddition = randomStatGenerator(-300, -400)
 
             // instead of logging this random stat value, eventually add it to the db value of the planet
+            try {
+                rainfallMutation('michael', bioStatAddition, hydroStatAddition, lithoStatAddition)
+            } catch (e) {
+                console.error(e)
+            }
+            
             console.log(`Tsunamis drown entire continents!!!
                 Hydrosphere increases: ${hydroStatAddition}
                 Biosphere increases: ${bioStatAddition}
