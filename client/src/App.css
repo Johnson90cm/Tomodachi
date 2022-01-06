@@ -167,6 +167,13 @@ button:active {
     bottom: 235px;
   }
 
+  .interaction-text{
+    position: absolute;
+    width: 100%;
+    top: 92%;
+    left: 0%;
+  }
+
   .game-over-text {
     width: 50%;
     position: relative;
@@ -225,6 +232,11 @@ button:active {
     width: 80%;
     left: 34px;
     bottom: 205px;
+  }
+
+  .interaction-text{
+    position: absolute;
+    top: 92%;
   }
 
   .game-over-text {
