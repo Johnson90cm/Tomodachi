@@ -17,6 +17,7 @@ function Start() {
                 variables: {
                     planetName: formState.planetName
                 }
+
             })
             console.log(mutationResponse)
         } catch (error) {
@@ -33,15 +34,20 @@ function Start() {
     };
 
     return (
-        <form>
-            <h1>Name your planet:</h1>
-            <input
-                type='text'
-                name='planetName'
-                onChange={handleChange}
-            />
-            <button onClick={handleStartSubmit}>Begin</button>
-        </form>
+        <div className="start-box container">
+            <form>
+                <h1>Name your planet:</h1>
+                <input
+                    type='text'
+                    name='planetName'
+                    onChange={handleChange}
+                />
+                <button onClick={handleStartSubmit}>Begin</button>
+            </form>
+            <h2>
+                Keep your planet alive by balancing your stats until the end of the game!
+            </h2>
+        </div>
     )
 }
 

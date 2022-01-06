@@ -26,7 +26,7 @@ body {
 }
 
 .container {
-  width: 32%;
+  width: 100%;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -34,6 +34,8 @@ body {
 }
 
 .box {
+  height: 85%;
+  width: 40%;
   background-color: rgb(69, 64, 114);
   border: 4px solid rgb(172, 172, 172);
   padding: 2.5rem;
@@ -41,7 +43,6 @@ body {
   box-shadow: inset 0 0 33px 5px rgba(0, 0, 0, 0.5);
 }
 
-/* Incase we wrap the buttons */
 .button-container {
   display: block;
   width: 50%;
@@ -49,6 +50,13 @@ body {
   position: relative;
   left: 153px;
   bottom: 250px;
+}
+
+.logout-button {
+  position: absolute;
+  top: 90%;
+  left: 49.65%;
+  transform: translate(-50%, -50%);
 }
 
 ul {
@@ -63,8 +71,27 @@ li {
   font-size: small;
 }
 
-button {
-  height: 3.0rem;
+input {
+  display: block;
+  margin: 2rem;
+  margin-right: auto;
+  margin-left: auto;
+  width: 50%;
+  padding: 1em;
+  text-align: center;
+  font-size: x-large;
+  font-weight: bold;
+}
+
+a {
+  display: block;
+  padding: 1rem;
+  color: white;
+  text-decoration: none;
+}
+
+button{
+  height: 3rem;
   width: 8.5rem;
   margin: 0.5rem;
   padding: 0.5rem;
@@ -93,6 +120,10 @@ button:active {
     background-size: 100% 106%;
   }
 
+  input {
+    font-size: large;
+  }
+
   button {
     height: 2.5rem;
     width: 8rem;
@@ -101,7 +132,11 @@ button:active {
   }
 
   ul {
-    display: block
+    display: block;
+  }
+
+  .container {
+    width: 100%;
   }
 
   .box {
@@ -110,10 +145,22 @@ button:active {
     width: 75%;
   }
 
+  .start-box {
+    padding: 0;
+    height: 50%;
+    width: 75%;
+  }
+
   .button-container {
     width: 55%;
     left: 130px;
     bottom: 235px;
+  }
+
+  .logout-button {
+    top: 90%;
+    left: 49%;
+    transform: translate(-50%, -50%);
   }
 
 }
@@ -125,16 +172,20 @@ button:active {
     background-size: 130% 140%;
   }
 
+  input {
+    font-size: medium;
+  }
+
   button {
     height: 2.5rem;
-    width: 6.20rem;
+    width: 6.2rem;
     margin: 0.5rem;
     padding: 0.5rem;
     font-size: 9px;
   }
 
   ul {
-    display: block
+    display: block;
   }
 
   .stat-text {
@@ -142,21 +193,16 @@ button:active {
   }
 
   .container {
-  width: 32%;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
+    width: 100%;
+  }
 
-.box {
-  background-color: rgb(69, 64, 114);
-  border: 4px solid rgb(172, 172, 172);
-  padding: 2.5rem;
-  -webkit-box-shadow: inset 0 0 33px 5px rgba(0, 0, 0, 0.5);
-  box-shadow: inset 0 0 33px 5px rgba(0, 0, 0, 0.5);
-}
-
+  .box {
+    background-color: rgb(69, 64, 114);
+    border: 4px solid rgb(172, 172, 172);
+    padding: 2.5rem;
+    -webkit-box-shadow: inset 0 0 33px 5px rgba(0, 0, 0, 0.5);
+    box-shadow: inset 0 0 33px 5px rgba(0, 0, 0, 0.5);
+  }
 
   .box {
     padding: 0;
@@ -168,6 +214,12 @@ button:active {
     width: 80%;
     left: 34px;
     bottom: 205px;
+  }
+
+  .logout-button {
+    top: 88%;
+    left: 48%;
+    transform: translate(-50%, -50%);
   }
 
 }

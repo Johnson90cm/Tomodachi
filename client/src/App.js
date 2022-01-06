@@ -28,7 +28,7 @@ const client = new ApolloClient({
 });
 
 function App() {
-  function logout(){
+  function logout() {
     auth.logout()
   }
 
@@ -43,12 +43,11 @@ function App() {
               Tomodachi
             </h1>
             {
-                auth.loggedIn() ?
-                  <div>true</div>
-                  :
-                  <div>false</div>
-              }
-            <button onClick={logout}>Logout</button>
+              auth.loggedIn() ?
+                <div>true</div>
+                :
+                <div>false</div>
+            }
             <Routes>
               {
                 auth.loggedIn() ?
@@ -60,6 +59,7 @@ function App() {
               <Route exact path='/home' element={<Home />} />
             </Routes>
           </div>
+          <button onClick={logout} className='logout-button'>Logout</button>
         </div>
       </Router>
     </ApolloProvider>
