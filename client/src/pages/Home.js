@@ -54,14 +54,19 @@ function Home() {
                 setTimeout(() => {
                     if (atmosphere > statTotals * .35 && atmosphere > biosphere && atmosphere > hydrosphere && atmosphere > lithosphere) {
                         changeAnimation('endgame-atmo')
+                        changeDescription('You finished with a Rocky Gaseous planet')
                     } else if (biosphere > statTotals * .35 && biosphere > atmosphere && biosphere > hydrosphere && biosphere > lithosphere) {
                         changeAnimation('endgame-bio')
+                        changeDescription('You finished with an Overgrown Mucky planet')
                     } else if (hydrosphere > statTotals * .35 && hydrosphere > biosphere && hydrosphere > atmosphere && hydrosphere > lithosphere) {
                         changeAnimation('endgame-hydro')
+                        changeDescription('You finished with a Flooded planet')
                     } else if (lithosphere > statTotals * .35 && lithosphere > biosphere && lithosphere > hydrosphere && lithosphere > atmosphere) {
                         changeAnimation('endgame-litho')
+                        changeDescription('You finished with a Firey Molten planet')
                     } else {
                         changeAnimation('endgame-good')
+                        changeDescription('You finished with a Perfect planet!! GREAT job!')
                     }
                 }, 5100)
             }
