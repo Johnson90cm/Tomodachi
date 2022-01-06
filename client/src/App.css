@@ -62,6 +62,13 @@ body {
 .logout-button {
   position: absolute;
   top: 97.5%;
+  left: 40%;
+}
+
+.newgame-button {
+  position: absolute;
+  top: 97.5%;
+  right: 40%;
 }
 
 .block {
@@ -181,6 +188,16 @@ button:active {
     bottom: 273px;
   }
 
+  .logout-button {
+    top: 97.5%;
+    left: 25%;
+  }
+  
+  .newgame-button {
+    top: 97.5%;
+    right: 25%;
+  }
+
 }
 
 /* Iphone Media Queries */
@@ -248,6 +265,12 @@ button:active {
 
   .logout-button {
     top: 96.5%;
+    left: 15%;
+  }
+  
+  .newgame-button {
+    top: 96.5%;
+    right: 15%;
   }
 
 }

@@ -73,7 +73,7 @@ function App() {
             </Switch>
           </div>
           <button onClick={logout} className='logout-button'>Logout</button>
-          <button type="submit" onClick={redirectStart}>New Game</button>
+          <button type="submit" onClick={redirectStart} className='newgame-button'>New Game</button>
           {start && <Redirect to='/start' />}
           {loginRedirect && <Redirect to='/login'/>}
         </div>
