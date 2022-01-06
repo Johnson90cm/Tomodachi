@@ -108,7 +108,7 @@ function Home() {
                 <Pet animation={animation} changeAnimation={changeAnimation} />
                 {
                 endgame ? 
-                <div>
+                <div className="button-container">
                     Game Over
                 </div>
                 :
