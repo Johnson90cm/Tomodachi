@@ -4,7 +4,8 @@ import { WIND } from '../../utils/mutations'
 import { useMutation } from '@apollo/client'
 
 function Wind(props) {
-    // Need to grab planet's stats from db with useQuery
+    const { currentPlanet } = props;
+
     const [windMutation, {error}] = useMutation(WIND)
 
     // Handle the button click and stat manipulation with this function
@@ -22,7 +23,7 @@ function Wind(props) {
 
             // instead of logging this random stat value, eventually add it to the db with a mutation
             try {
-                windMutation({variables: { planetName: 'michael', biosphere: bioStatAddition, atmosphere: atmoStatAddition}})
+                windMutation({variables: {planetId: currentPlanet._id, bio: bioStatAddition, atmo: atmoStatAddition}})
             } catch (e) {
                 console.error(e)
             }
@@ -42,7 +43,7 @@ function Wind(props) {
 
             // instead of logging this random stat value, eventually add it to the db with a mutation
             try {
-                windMutation({variables: { planetName: 'michael', biosphere: bioStatAddition, atmosphere: atmoStatAddition}})
+                windMutation({variables: {planetId: currentPlanet._id, bio: bioStatAddition, atmo: atmoStatAddition}})
             } catch (e) {
                 console.error(e)
             }
@@ -62,7 +63,7 @@ function Wind(props) {
 
             // instead of logging this random stat value, eventually add it to the db value of the planet
             try {
-                windMutation({variables: { planetName: 'michael', biosphere: bioStatAddition, atmosphere: atmoStatAddition}})
+                windMutation({variables: {planetId: currentPlanet._id, bio: bioStatAddition, atmo: atmoStatAddition}})
             } catch (e) {
                 console.error(e)
             }

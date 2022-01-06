@@ -26,65 +26,68 @@ function Home() {
             setCurrentPlanet(planet)
         }
     }, [data, currentPlanet]);
-    
-    if(loading) {
-        return(
+
+    if (loading) {
+        return (
             <h1>Loading...</h1>
         )
     }
 
-    return (
-        <>
-            <div>
-                <ul className='stat-container'>
-                    <Stat 
-                        statName={'biosphere'} 
+    if (data) {
+        return (
+            <>
+                <h2>{currentPlanet.planetName}</h2>
+                <div>
+                    <ul className='stat-container'>
+                        <Stat
+                            statName={'biosphere'}
+                            changeAnimation={changeAnimation}
+                            currentPlanet={currentPlanet}
+                        />
+                        <Stat
+                            statName={'hydrosphere'}
+                            changeAnimation={changeAnimation}
+                            currentPlanet={currentPlanet}
+                        />
+                        <Stat
+                            statName={'lithosphere'}
+                            changeAnimation={changeAnimation}
+                            currentPlanet={currentPlanet}
+                        />
+                        <Stat
+                            statName={'atmosphere'}
+                            changeAnimation={changeAnimation}
+                            currentPlanet={currentPlanet}
+                        />
+                        <Stat
+                            statName={'age'}
+                            changeAnimation={changeAnimation}
+                            currentPlanet={currentPlanet}
+                        />
+                    </ul>
+                </div>
+                <Pet animation={animation} changeAnimation={changeAnimation} />
+                <div className='button-container'>
+                    <Rainfall
                         changeAnimation={changeAnimation}
                         currentPlanet={currentPlanet}
                     />
-                    <Stat 
-                        statName={'hydrosphere'} 
+                    <Volcano
                         changeAnimation={changeAnimation}
                         currentPlanet={currentPlanet}
                     />
-                    <Stat 
-                        statName={'lithosphere'} 
+                    <Sunlight
                         changeAnimation={changeAnimation}
                         currentPlanet={currentPlanet}
                     />
-                    <Stat 
-                        statName={'atmosphere'} 
+                    <Wind
                         changeAnimation={changeAnimation}
                         currentPlanet={currentPlanet}
                     />
-                    <Stat 
-                        statName={'age'} 
-                        changeAnimation={changeAnimation}
-                        currentPlanet={currentPlanet}
-                    />
-                </ul>
-            </div>
-            <Pet animation={animation} changeAnimation={changeAnimation} />
-            <div className='button-container'>
-                <Rainfall 
-                    changeAnimation={changeAnimation} 
-                    currentPlanet={currentPlanet}
-                />
-                <Volcano 
-                    changeAnimation={changeAnimation} 
-                    currentPlanet={currentPlanet}
-                />
-                <Sunlight 
-                    changeAnimation={changeAnimation} 
-                    currentPlanet={currentPlanet}
-                />
-                <Wind 
-                    changeAnimation={changeAnimation}
-                    currentPlanet={currentPlanet}
-                />
-            </div>
-        </>
-    )
+                </div>
+            </>
+        )
+    }
 }
 
 export default Home;

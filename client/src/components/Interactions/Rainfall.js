@@ -85,8 +85,6 @@ function Rainfall(props) {
                 Lithosphere decreases: ${lithoStatAddition}
                 `)
         }
-
-    // We'll also want to render the interaction animation here
     }
 
     return (

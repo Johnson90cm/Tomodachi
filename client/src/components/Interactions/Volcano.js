@@ -4,7 +4,7 @@ import { VOLCANO } from '../../utils/mutations'
 import { useMutation } from '@apollo/client'
 
 function Volcano(props) {
-    // Need to grab planet's stats from db with useQuery
+    const { currentPlanet } = props;
 
     const [volcanoMutation, { error } ] = useMutation(VOLCANO);
 
@@ -25,7 +25,7 @@ function Volcano(props) {
 
             // instead of logging this random stat value, eventually add it to the db with a mutation
             try {
-                volcanoMutation({variables: {planetName: 'michael', biosphere: bioStatAddition, hydrosphere: hydroStatAddition, lithosphere:lithoStatAddition, atmosphere: atmoStatAddition}})
+                volcanoMutation({variables: {planetId: currentPlanet._id, bio: bioStatAddition, hydro: hydroStatAddition, litho:lithoStatAddition, atmo: atmoStatAddition}})
             } catch (e) {
                 console.error(e)
             }
@@ -49,7 +49,7 @@ function Volcano(props) {
 
             // instead of logging this random stat value, eventually add it to the db with a mutation
             try {
-                volcanoMutation({variables: {planetName: 'michael', biosphere: bioStatAddition, hydrosphere: hydroStatAddition, lithosphere:lithoStatAddition, atmosphere: atmoStatAddition}})
+                volcanoMutation({variables: {planetId: currentPlanet._id, bio: bioStatAddition, hydro: hydroStatAddition, litho:lithoStatAddition, atmo: atmoStatAddition}})
             } catch (e) {
                 console.error(e)
             }
@@ -73,7 +73,7 @@ function Volcano(props) {
 
             // instead of logging this random stat value, eventually add it to the db value of the planet
             try {
-                volcanoMutation({variables: {planetName: 'michael', biosphere: bioStatAddition, hydrosphere: hydroStatAddition, lithosphere:lithoStatAddition, atmosphere: atmoStatAddition}})
+                volcanoMutation({variables: {planetId: currentPlanet._id, bio: bioStatAddition, hydro: hydroStatAddition, litho:lithoStatAddition, atmo: atmoStatAddition}})
             } catch (e) {
                 console.error(e)
             }
@@ -85,8 +85,6 @@ function Volcano(props) {
                 Biosphere decreases: ${bioStatAddition}
                 `)
         }
-
-        // We'll also want to render the interaction animation here
     }
 
     return (
