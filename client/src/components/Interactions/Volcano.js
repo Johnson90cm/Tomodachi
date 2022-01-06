@@ -4,7 +4,7 @@ import { VOLCANO } from '../../utils/mutations'
 import { useMutation } from '@apollo/client'
 
 function Volcano(props) {
-    const { currentPlanet } = props;
+    const { currentPlanet, changeDescription } = props;
 
     const [volcanoMutation, { error } ] = useMutation(VOLCANO);
 
@@ -30,12 +30,7 @@ function Volcano(props) {
                 console.error(e)
             }
             
-            console.log(`Volcanoes erupt..
-                Lithosphere increases: ${lithoStatAddition}
-                Hydrosphere decreases: ${hydroStatAddition}
-                Atmosphere decreases: ${atmoStatAddition}
-                Biosphere decreases: ${bioStatAddition}
-                `)
+            changeDescription('Volcanoes erupt...')
         }
 
         if (diceRoll >= 76 && diceRoll <= 95) {
@@ -54,12 +49,7 @@ function Volcano(props) {
                 console.error(e)
             }
             
-            console.log(`Severe Eruptions!
-                Lithosphere increases: ${lithoStatAddition}
-                Hydrosphere decreases: ${hydroStatAddition}
-                Atmosphere decreases: ${atmoStatAddition}
-                Biosphere decreases: ${bioStatAddition}
-                `)
+            changeDescription('Severe Eruptions!!!')
         }
 
         if (diceRoll >= 96 && diceRoll <= 100) {
@@ -78,12 +68,7 @@ function Volcano(props) {
                 console.error(e)
             }
             
-            console.log(`Massive volcanoes terraform the planet!!!
-                Lithosphere increases: ${lithoStatAddition}
-                Hydrosphere decreases: ${hydroStatAddition}
-                Atmosphere decreases: ${atmoStatAddition}
-                Biosphere decreases: ${bioStatAddition}
-                `)
+            changeDescription('Massive volcanoes terraform the planet!!!!!')
         }
     }
 

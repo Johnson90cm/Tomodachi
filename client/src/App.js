@@ -7,6 +7,7 @@ import Home from './pages/Home';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 import Start from './pages/Start';
+import { useState } from 'react'
 
 const authLink = setContext((_, { header }) => {
   const token = localStorage.getItem("id_token");
@@ -28,8 +29,23 @@ const client = new ApolloClient({
 });
 
 function App() {
+  const [loginRedirect, setLoginRedirect] = useState(false)
+
   function logout() {
     auth.logout()
+    setLoginRedirect(true)
+    setTimeout(()=>{
+      setLoginRedirect(false)
+    }, 100)
+  }
+
+  const [start, setStart] = useState(false)
+
+  function redirectStart() {
+      setStart(true)
+      setTimeout(()=>{
+        setStart(false)
+      }, 100)
   }
 
   return (
@@ -57,6 +73,9 @@ function App() {
             </Switch>
           </div>
           <button onClick={logout} className='logout-button'>Logout</button>
+          <button type="submit" onClick={redirectStart}>New Game</button>
+          {start && <Redirect to='/start' />}
+          {loginRedirect && <Redirect to='/login'/>}
         </div>
       </Router>
     </ApolloProvider>

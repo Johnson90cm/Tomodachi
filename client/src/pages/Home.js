@@ -4,6 +4,7 @@ import Stat from "../components/Stat";
 import { Rainfall, Sunlight, Volcano, Wind } from '../components/Interactions';
 import { useQuery } from "@apollo/client";
 import { QUERY_ME } from '../utils/queries';
+import { Redirect } from 'react-router-dom'
 
 function Home() {
 
@@ -11,11 +12,15 @@ function Home() {
 
     const { loading, data } = useQuery(QUERY_ME)
 
+    const [disabled, changeDisabled] = useState(false)
+
     // useState to grab the created planets ID for gameplay
     const [currentPlanet, setCurrentPlanet] = useState('')
 
     // variable to set the endgame to true later on
     const [endgame, setEndgame] = useState(false)
+
+    const [description, changeDescription] = useState('Click one of the interactions to start')
 
     useEffect(() => {
         if (data) {
@@ -40,8 +45,6 @@ function Home() {
                 hydrosphere +
                 lithosphere;
 
-            console.log(endgame)
-
             //checks if planet has reached max age
             if (currentPlanet.age >= 1000) {
                 //sets the engame boolean to true to remove buttons
@@ -52,16 +55,21 @@ function Home() {
                 setTimeout(() => {
                     if (atmosphere > statTotals * .35 && atmosphere > biosphere && atmosphere > hydrosphere && atmosphere > lithosphere) {
                         changeAnimation('endgame-atmo')
+                        changeDescription('You finished with a Rocky Gaseous planet')
                     } else if (biosphere > statTotals * .35 && biosphere > atmosphere && biosphere > hydrosphere && biosphere > lithosphere) {
                         changeAnimation('endgame-bio')
+                        changeDescription('You finished with an Overgrown Mucky planet')
                     } else if (hydrosphere > statTotals * .35 && hydrosphere > biosphere && hydrosphere > atmosphere && hydrosphere > lithosphere) {
                         changeAnimation('endgame-hydro')
+                        changeDescription('You finished with a Flooded planet')
                     } else if (lithosphere > statTotals * .35 && lithosphere > biosphere && lithosphere > hydrosphere && lithosphere > atmosphere) {
                         changeAnimation('endgame-litho')
+                        changeDescription('You finished with a Firey Molten planet')
                     } else {
                         changeAnimation('endgame-good')
+                        changeDescription('You finished with a Perfect planet!! GREAT job!')
                     }
-                }, 5100)
+                }, 5200)
             }
         }
     }, [data, currentPlanet]);
@@ -75,14 +83,8 @@ function Home() {
     if (data) {
         return (
             <>
-                <h2>{currentPlanet.planetName}</h2>
                 <div>
                     <ul className='stat-container'>
-                        <Stat
-                            statName={'age'}
-                            changeAnimation={changeAnimation}
-                            currentPlanet={currentPlanet}
-                        />
                         <Stat
                             statName={'biosphere'}
                             changeAnimation={changeAnimation}
@@ -105,32 +107,55 @@ function Home() {
                         />
                     </ul>
                 </div>
-                <Pet animation={animation} changeAnimation={changeAnimation} />
+                <div className="block">
+                            <h2>{currentPlanet.planetName}</h2>
+                            <Stat
+                                statName={'age'}
+                                changeAnimation={changeAnimation}
+                                currentPlanet={currentPlanet}
+                            />
+                        </div>
+                <Pet animation={animation} changeAnimation={changeAnimation} changeDisabled={changeDisabled} />
                 {
-                endgame ? 
-                <div className="button-container">
-                    Game Over
-                </div>
-                :
-                <div className='button-container'>
-                    <Rainfall
-                        changeAnimation={changeAnimation}
-                        currentPlanet={currentPlanet}
-                    />
-                    <Volcano
-                        changeAnimation={changeAnimation}
-                        currentPlanet={currentPlanet}
-                    />
-                    <Sunlight
-                        changeAnimation={changeAnimation}
-                        currentPlanet={currentPlanet}
-                    />
-                    <Wind
-                        changeAnimation={changeAnimation}
-                        currentPlanet={currentPlanet}
-                    />
-                </div>
+                    endgame ?
+                        <div>
+                            <div className="game-over-text">
+                                Game Over
+                            </div>
+                            <div>
+                                {description}
+                            </div>
+                        </div>
+                        :
+                        disabled ? 
+                        <div>
+                            {description}
+                        </div>
+                        :
+                        <div className='button-container'>
+                            <Rainfall
+                                changeAnimation={changeAnimation}
+                                currentPlanet={currentPlanet}
+                                changeDescription={changeDescription}
+                            />
+                            <Volcano
+                                changeAnimation={changeAnimation}
+                                currentPlanet={currentPlanet}
+                                changeDescription={changeDescription}
+                            />
+                            <Sunlight
+                                changeAnimation={changeAnimation}
+                                currentPlanet={currentPlanet}
+                                changeDescription={changeDescription}
+                            />
+                            <Wind
+                                changeAnimation={changeAnimation}
+                                currentPlanet={currentPlanet}
+                                changeDescription={changeDescription}
+                            />
+                        </div>
                 }
+
             </>
         )
     }

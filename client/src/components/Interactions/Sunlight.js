@@ -4,7 +4,7 @@ import { SUNLIGHT } from '../../utils/mutations'
 import { useMutation } from '@apollo/client'
 
 function Sunlight(props) {
-    const { currentPlanet } = props;
+    const { currentPlanet, changeDescription } = props;
 
     const [sunlightMutation, {error}] = useMutation(SUNLIGHT)
 
@@ -31,11 +31,7 @@ function Sunlight(props) {
                 console.error(e)
             }
             
-            console.log(`The sun shines a little brighter...
-                Biosphere increases: ${bioStatAddition}
-                Atmosphere increases: ${atmoStatAddition}
-                Hydrosphere decreases: ${hydroStatAddition}
-                `)
+            changeDescription('The sun shines a little brighter...')
         }
 
         if (diceRoll >= 76 && diceRoll <= 95) {
@@ -53,11 +49,7 @@ function Sunlight(props) {
                 console.error(e)
             }
             
-            console.log(`The whole planet warms a little!
-                Biosphere increases: ${bioStatAddition}
-                Atmosphere increases: ${atmoStatAddition}
-                Hydrosphere decreases: ${hydroStatAddition}
-                `)
+            changeDescription('The whole planet warms a little!')
         }
 
         if (diceRoll >= 96 && diceRoll <= 100) {
@@ -75,11 +67,7 @@ function Sunlight(props) {
                 console.error(e)
             }
             
-            console.log(`Extreme sunlight causes all vegetation to explode with growth!
-                Biosphere increases: ${bioStatAddition}
-                Atmosphere increases: ${atmoStatAddition}
-                Hydrosphere decreases: ${hydroStatAddition}
-                `)
+            changeDescription('Extreme sunlight causes all vegetation to explode with growth!')
         }
     }
 
