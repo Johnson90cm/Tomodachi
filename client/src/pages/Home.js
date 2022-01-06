@@ -136,25 +136,21 @@ function Home() {
                                 changeAnimation={changeAnimation}
                                 currentPlanet={currentPlanet}
                                 changeDescription={changeDescription}
-                                disabled={disabled && true}
                             />
                             <Volcano
                                 changeAnimation={changeAnimation}
                                 currentPlanet={currentPlanet}
                                 changeDescription={changeDescription}
-                                disabled={disabled && true}
                             />
                             <Sunlight
                                 changeAnimation={changeAnimation}
                                 currentPlanet={currentPlanet}
                                 changeDescription={changeDescription}
-                                disabled={disabled && true}
                             />
                             <Wind
                                 changeAnimation={changeAnimation}
                                 currentPlanet={currentPlanet}
                                 changeDescription={changeDescription}
-                                disabled={disabled && true}
                             />
                         </div>
                 }
