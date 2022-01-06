@@ -1,8 +1,13 @@
 import React from "react";
 import { randomStatGenerator } from "../../utils/helpers";
+import { RAINFALL } from '../../utils/mutations'
+import { useMutation } from '@apollo/client'
 
 function Rainfall(props) {
-    // Need to grab planet's stats from db with useQuery
+    const { currentPlanet } = props;
+
+    //set up function for updating stats
+    const [rainfallMutation, {error} ] = useMutation(RAINFALL);
 
     // Handle the button click and stat manipulation with this function
     function rainfallHandler() {
@@ -21,6 +26,14 @@ function Rainfall(props) {
             const lithoStatAddition = randomStatGenerator(-50, -75)
 
             // instead of logging this random stat value, eventually add it to the db with a mutation
+            
+            try {
+                rainfallMutation({variables: {planetId: currentPlanet._id, bio: bioStatAddition, hydro: hydroStatAddition, litho: lithoStatAddition}})
+            } catch (e) {
+                console.error(e)
+            }
+            
+
             console.log(`Rainfall..
                 Hydrosphere increases: ${hydroStatAddition}
                 Biosphere increases: ${bioStatAddition}
@@ -37,6 +50,13 @@ function Rainfall(props) {
             const lithoStatAddition = randomStatGenerator(-100, -125)
 
             // instead of logging this random stat value, eventually add it to the db with a mutation
+            
+            try {
+                rainfallMutation({variables: {planetId: currentPlanet._id, bio: bioStatAddition, hydro: hydroStatAddition, litho: lithoStatAddition}})
+            } catch (e) {
+                console.error(e)
+            }
+
             console.log(`Severe Storms!
                 Hydrosphere increases: ${hydroStatAddition}
                 Biosphere increases: ${bioStatAddition}
@@ -53,14 +73,18 @@ function Rainfall(props) {
             const lithoStatAddition = randomStatGenerator(-300, -400)
 
             // instead of logging this random stat value, eventually add it to the db value of the planet
+            try {
+                rainfallMutation({variables: {planetId: currentPlanet._id, bio: bioStatAddition, hydro: hydroStatAddition, litho: lithoStatAddition}})
+            } catch (e) {
+                console.error(e)
+            }
+            
             console.log(`Tsunamis drown entire continents!!!
                 Hydrosphere increases: ${hydroStatAddition}
                 Biosphere increases: ${bioStatAddition}
                 Lithosphere decreases: ${lithoStatAddition}
                 `)
         }
-
-    // We'll also want to render the interaction animation here
     }
 
     return (

@@ -1,37 +1,63 @@
 import './App.css';
-import Nav from './components/Nav';
-import Pet from './components/Pet';
-import { useState } from 'react';
-import { Rainfall, Volcano, Sunlight, Wind } from './components/Interactions'
+import Login from './pages/Login';
+import { ApolloProvider, ApolloClient, InMemoryCache, createHttpLink } from '@apollo/client';
+import { setContext } from '@apollo/client/link/context';
+import auth from './utils/auth';
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Home from './pages/Home';
+import Signup from './pages/Signup';
+import Start from './pages/Start';
+
+const authLink = setContext((_, { header }) => {
+  const token = localStorage.getItem("id_token");
+  return {
+    headers: {
+      ...header,
+      authorization: token ? `Bearer ${token}` : "",
+    },
+  };
+});
+
+const httpLink = createHttpLink({
+  uri: '/graphql',
+});
+
+const client = new ApolloClient({
+  link: authLink.concat(httpLink),
+  cache: new InMemoryCache(),
+});
 
 function App() {
-
-  const [animation, changeAnimation] = useState('calm');
-
-
+  function logout() {
+    auth.logout()
+  }
 
   return (
-    <div className="wrapper">
-      <div className='container box'>
-        <Nav />
-        <h1>
-          Tomodachi
-        </h1>
-        <ul>
-          <li>Stat 1</li>
-          <li>Stat 2</li>
-          <li>Stat 3</li>
-          <li>Stat 4</li>
-        </ul>
-        <Pet animation={animation} changeAnimation={changeAnimation} />
-        <div className='button-container'>
-          <Rainfall changeAnimation={changeAnimation} />
-          <Volcano changeAnimation={changeAnimation} />
-          <Sunlight changeAnimation={changeAnimation} />
-          <Wind changeAnimation={changeAnimation} />
+    <ApolloProvider client={client}>
+      <Router>
+        <div className="wrapper">
+          <div className='container box'>
+            <h1>
+              Tomodachi
+            </h1>
+            {
+              auth.loggedIn() ?
+                <div>Logged In!</div>
+                :
+                <div>Please Log In</div>
+            }
+            <Routes>
+              <Route exact path='/start' element={<Start />} />
+              <Route exact path='/' element={<Login />} />
+              <Route exact path='/login' element={<Login />} />
+              <Route exact path='/signup' element={<Signup />} />
+              <Route exact path='/home' element={<Home />} />
+            </Routes>
+          </div>
+          <button onClick={logout} className='logout-button'>Logout</button>
         </div>
-      </div>
-    </div>
+      </Router>
+    </ApolloProvider>
   );
 }
 
