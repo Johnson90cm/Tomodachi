@@ -3,7 +3,7 @@ import Login from './pages/Login';
 import { ApolloProvider, ApolloClient, InMemoryCache, createHttpLink } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
 import auth from './utils/auth';
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Home from './pages/Home';
 import Signup from './pages/Signup';
 import Start from './pages/Start';
@@ -46,13 +46,13 @@ function App() {
                 :
                 <div>Please Log In</div>
             }
-            <Routes>
-              <Route exact path='/start' element={<Start />} />
-              <Route exact path='/' element={<Login />} />
-              <Route exact path='/login' element={<Login />} />
-              <Route exact path='/signup' element={<Signup />} />
-              <Route exact path='/home' element={<Home />} />
-            </Routes>
+            <Switch>
+              <Route exact path='/start' component={Start} />
+              <Route exact path='/' component={Login} />
+              <Route exact path='/login' component={Login} />
+              <Route exact path='/signup'component={Signup} />
+              <Route exact path='/home' component={Home} />
+            </Switch>
           </div>
           <button onClick={logout} className='logout-button'>Logout</button>
         </div>
