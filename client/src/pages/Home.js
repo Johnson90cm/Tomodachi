@@ -1,4 +1,4 @@
-import{ React, useState } from "react";
+import{ React, useState, useEffect } from "react";
 import Pet from "../components/Pet";
 import Stat from "../components/Stat";
 import { Rainfall, Sunlight, Volcano, Wind } from '../components/Interactions';
@@ -13,19 +13,18 @@ function Home() {
 
     console.log(data);
 
-    const dummyBoolean = false;
+    useEffect(() => {
+        // grab last index in the users savedPlanets array (AKA planet that was just created)
+        const currentPlanetIndex = data.me.savedPlanets.length -1
+
+        // grab the id of that planet from that index
+        const currentPlanetId = data.me.savedPlanets[currentPlanetIndex]._id
+
+        // set the planet that was created to the current planet for gameplay
+        console.log(currentPlanetId)
+    }, [data]);
 
     return (
-        <>
-        {
-        dummyBoolean ?
-
-        <button>
-            Create Planet
-        </button>
-
-        :
-
         <>
             <div>
                 <ul className='stat-container'>
@@ -42,8 +41,6 @@ function Home() {
                 <Sunlight changeAnimation={changeAnimation} />
                 <Wind changeAnimation={changeAnimation} />
             </div>
-        </>
-        }
         </>
     )
 }

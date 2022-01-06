@@ -19,6 +19,9 @@ function Login(props) {
         } catch (e) {
             console.log(e);
         }
+
+        console.log('yay')
+        window.location.replace('/start')
     };
 
     const handleChange = (event) => {
