@@ -1,13 +1,16 @@
 import React from 'react';
 import { useQuery } from '@apollo/client';
 import { QUERY_ME } from '../../utils/queries';
+import auth from '../../utils/auth'
 
 function Stat(props) {
 
     const { stat } = props
     const { changeAnimation } = props
 
-    const { loading, data } = useQuery(QUERY_ME)
+    const { loading, error, data } = useQuery(QUERY_ME)
+
+    console.log(data)
 
     let statNumber;
 
@@ -17,12 +20,18 @@ function Stat(props) {
         )
     }
 
-    if(data) {
-        const atmosphere = data.savedPlanets.atmosphere;
-        const biosphere = data.savedPlanets.biosphere;
-        const hydrosphere = data.savedPlanets.hydrosphere;
-        const lithosphere = data.savedPlanets.lithosphere
-        statNumber = data.savedPlanets[stat]
+    if(error) {
+        return(
+            <li>Error! {error} </li>
+        )
+    }
+
+    if(data.me) {
+        const atmosphere = data.me.savedPlanets.atmosphere;
+        const biosphere = data.me.savedPlanets.biosphere;
+        const hydrosphere = data.me.savedPlanets.hydrosphere;
+        const lithosphere = data.me.savedPlanets.lithosphere
+        statNumber = data.me.savedPlanets[stat]
 
         //gets a total score to determine percentages
         const statTotals = atmosphere + 
@@ -49,7 +58,13 @@ function Stat(props) {
     }  
 
     return (
-        <li className='stat-text'>{stat} {statNumber}</li>
+        <li className='stat-text'>{stat} {statNumber} {
+            auth.loggedIn() ?
+                <div>true</div>
+                :
+                <div>false</div>
+        }</li>
+        
     );
 }
 
