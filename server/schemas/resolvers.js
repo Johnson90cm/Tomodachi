@@ -76,7 +76,7 @@ const resolvers = {
         const updatedBio = planet.biosphere += bio
         const updatedHydro = planet.hydrosphere += hydro
         const updatedLitho = planet.lithosphere += litho
-        const updatedAge = planet.age += 1000
+        const updatedAge = planet.age += 100
 
         // update the subdocuments values
         planet.set({
