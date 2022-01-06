@@ -13,19 +13,25 @@ import './style.css'
 
 function Pet(props) {
 
+    const {changeDisabled, changeAnimation, animation} = props
+
     const renderAnimation = () => {
-        switch (props.animation) {
+        switch (animation) {
         case 'rainfall':
-            setTimeout(() => { props.changeAnimation('calm') }, 5000)
+            changeDisabled(true)
+            setTimeout(() => { changeAnimation('calm'); changeDisabled(false) }, 5000)
             return Rainfall;
         case 'sunlight':
-            setTimeout(() => { props.changeAnimation('calm') }, 5000)
+            changeDisabled(true)
+            setTimeout(() => { changeAnimation('calm'); changeDisabled(false) }, 5000)
             return Sunlight;
         case 'volcanoes':
-            setTimeout(() => { props.changeAnimation('calm') }, 5000)
+            changeDisabled(true)
+            setTimeout(() => { changeAnimation('calm'); changeDisabled(false) }, 5000)
             return Volcanos;
         case 'wind':
-            setTimeout(() => { props.changeAnimation('calm') }, 5000)
+            changeDisabled(true)
+            setTimeout(() => { changeAnimation('calm'); changeDisabled(false) }, 5000)
             return Tornado;
         case 'endgame-bio':
             return EndgameBio;
