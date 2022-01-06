@@ -14,7 +14,10 @@ function Start() {
 
         try {
             const mutationResponse = await createPlanet({
-                variables: { planetName: formState.planetVariables }
+                variables: {
+                    planetName: formState.planetName
+                }
+
             })
             console.log(mutationResponse)
         } catch (error) {

@@ -56,6 +56,7 @@ function App() {
                   <Route exact path='/login' element={<Login />} />
               }
               <Route exact path='/signup' element={<Signup />} />
+              <Route exact path='/home' element={<Home />} />
             </Routes>
           </div>
           <button onClick={logout} className='logout-button'>Logout</button>
