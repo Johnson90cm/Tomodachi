@@ -9,6 +9,8 @@ function Stat(props) {
 
     const { loading, data } = useQuery(QUERY_ME)
 
+    console.log(data)
+
     let statNumber;
 
     if(loading) {
@@ -18,11 +20,11 @@ function Stat(props) {
     }
 
     if(data) {
-        const atmosphere = data.savedPlanets.atmosphere;
-        const biosphere = data.savedPlanets.biosphere;
-        const hydrosphere = data.savedPlanets.hydrosphere;
-        const lithosphere = data.savedPlanets.lithosphere
-        statNumber = data.savedPlanets[stat]
+        const atmosphere = data.me.savedPlanets.atmosphere;
+        const biosphere = data.me.savedPlanets.biosphere;
+        const hydrosphere = data.me.savedPlanets.hydrosphere;
+        const lithosphere = data.me.savedPlanets.lithosphere
+        statNumber = data.me.savedPlanets[stat]
 
         //gets a total score to determine percentages
         const statTotals = atmosphere + 
