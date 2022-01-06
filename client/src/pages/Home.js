@@ -84,14 +84,8 @@ function Home() {
     if (data) {
         return (
             <>
-                <h2>{currentPlanet.planetName}</h2>
                 <div>
                     <ul className='stat-container'>
-                        <Stat
-                            statName={'age'}
-                            changeAnimation={changeAnimation}
-                            currentPlanet={currentPlanet}
-                        />
                         <Stat
                             statName={'biosphere'}
                             changeAnimation={changeAnimation}
@@ -114,35 +108,43 @@ function Home() {
                         />
                     </ul>
                 </div>
+                <div className="block">
+                            <h2>{currentPlanet.planetName}</h2>
+                            <Stat
+                                statName={'age'}
+                                changeAnimation={changeAnimation}
+                                currentPlanet={currentPlanet}
+                            />
+                        </div>
                 <Pet animation={animation} changeAnimation={changeAnimation} />
                 {
-                endgame ? 
-                <div className="button-container">
-                    Game Over
-                </div>
-                :
-                <div className='button-container'>
-                    <Rainfall
-                        changeAnimation={changeAnimation}
-                        currentPlanet={currentPlanet}
-                        changeDescription={changeDescription}
-                    />
-                    <Volcano
-                        changeAnimation={changeAnimation}
-                        currentPlanet={currentPlanet}
-                        changeDescription={changeDescription}
-                    />
-                    <Sunlight
-                        changeAnimation={changeAnimation}
-                        currentPlanet={currentPlanet}
-                        changeDescription={changeDescription}
-                    />
-                    <Wind
-                        changeAnimation={changeAnimation}
-                        currentPlanet={currentPlanet}
-                        changeDescription={changeDescription}
-                    />
-                </div>
+                    endgame ?
+                        <div className="game-over-text">
+                            Game Over
+                        </div>
+                        :
+                        <div className='button-container'>
+                            <Rainfall
+                                changeAnimation={changeAnimation}
+                                currentPlanet={currentPlanet}
+                                changeDescription={changeDescription}
+                            />
+                            <Volcano
+                                changeAnimation={changeAnimation}
+                                currentPlanet={currentPlanet}
+                                changeDescription={changeDescription}
+                            />
+                            <Sunlight
+                                changeAnimation={changeAnimation}
+                                currentPlanet={currentPlanet}
+                                changeDescription={changeDescription}
+                            />
+                            <Wind
+                                changeAnimation={changeAnimation}
+                                currentPlanet={currentPlanet}
+                                changeDescription={changeDescription}
+                            />
+                        </div>
                 }
                 {
                     <div>
