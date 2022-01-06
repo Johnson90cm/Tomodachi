@@ -11,6 +11,8 @@ function Home() {
 
     const { loading, data } = useQuery(QUERY_ME)
 
+    const [disabled, changeDisabled] = useState(false)
+
     // useState to grab the created planets ID for gameplay
     const [currentPlanet, setCurrentPlanet] = useState('')
 
