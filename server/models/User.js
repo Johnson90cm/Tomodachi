@@ -5,8 +5,6 @@ const mongoose = require('mongoose');
 const planetSchema = new Schema({
   planetName: {
     type: String,
-    required: true,
-    unique: true,
     trim: true,
   },
   biosphere: {

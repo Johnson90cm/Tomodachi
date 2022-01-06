@@ -6,6 +6,7 @@ import auth from './utils/auth';
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Home from './pages/Home';
 import Signup from './pages/Signup';
+import Start from './pages/Start';
 
 const authLink = setContext((_, { header }) => {
   const token = localStorage.getItem("id_token");
@@ -26,9 +27,13 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 
-console.log(auth.loggedIn())
-
 function App() {
+  function logout(){
+    auth.logout()
+  }
+
+  console.log(auth.loggedIn())
+
   return (
     <ApolloProvider client={client}>
       <Router>
@@ -37,10 +42,17 @@ function App() {
             <h1>
               Tomodachi
             </h1>
+            {
+                auth.loggedIn() ?
+                  <div>true</div>
+                  :
+                  <div>false</div>
+              }
+            <button onClick={logout}>Logout</button>
             <Routes>
               {
                 auth.loggedIn() ?
-                  <Route exact path='/' element={<Home />} />
+                  <Route exact path='/start' element={<Start />} />
                   :
                   <Route exact path='/login' element={<Login />} />
               }
