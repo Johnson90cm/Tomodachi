@@ -107,29 +107,29 @@ function Home() {
                 </div>
                 <Pet animation={animation} changeAnimation={changeAnimation} />
                 {
-                    endgame ?
-                        <div>
-                            Game Over
-                        </div>
-                        :
-                        <div className='button-container'>
-                            <Rainfall
-                                changeAnimation={changeAnimation}
-                                currentPlanet={currentPlanet}
-                            />
-                            <Volcano
-                                changeAnimation={changeAnimation}
-                                currentPlanet={currentPlanet}
-                            />
-                            <Sunlight
-                                changeAnimation={changeAnimation}
-                                currentPlanet={currentPlanet}
-                            />
-                            <Wind
-                                changeAnimation={changeAnimation}
-                                currentPlanet={currentPlanet}
-                            />
-                        </div>
+                endgame ? 
+                <div className="button-container">
+                    Game Over
+                </div>
+                :
+                <div className='button-container'>
+                    <Rainfall
+                        changeAnimation={changeAnimation}
+                        currentPlanet={currentPlanet}
+                    />
+                    <Volcano
+                        changeAnimation={changeAnimation}
+                        currentPlanet={currentPlanet}
+                    />
+                    <Sunlight
+                        changeAnimation={changeAnimation}
+                        currentPlanet={currentPlanet}
+                    />
+                    <Wind
+                        changeAnimation={changeAnimation}
+                        currentPlanet={currentPlanet}
+                    />
+                </div>
                 }
             </>
         )
