@@ -102,7 +102,7 @@ const resolvers = {
         const updatedHydro = planet.hydrosphere += hydro
         const updatedLitho = planet.lithosphere += litho
         const updatedAtmo = planet.atmosphere += atmo
-        const updatedAge = planet.age += 1000
+        const updatedAge = planet.age += 100
 
         // update the subdocuments values
         planet.set({
@@ -128,7 +128,7 @@ const resolvers = {
         const updatedBio = planet.biosphere += bio
         const updatedHydro = planet.hydrosphere += hydro
         const updatedAtmo = planet.atmosphere += atmo
-        const updatedAge = planet.age += 1000
+        const updatedAge = planet.age += 100
 
         // update the subdocuments values
         planet.set({
@@ -152,7 +152,7 @@ const resolvers = {
         // calculate the new value (db value + stat change)
         const updatedBio = planet.biosphere += bio
         const updatedAtmo = planet.atmosphere += atmo
-        const updatedAge = planet.age += 1000
+        const updatedAge = planet.age += 100
 
         // update the subdocuments values
         planet.set({

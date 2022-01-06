@@ -40,10 +40,10 @@ function Home() {
                 hydrosphere +
                 lithosphere;
 
-                console.log(endgame)
+            console.log(endgame)
 
             //checks if planet has reached max age
-            if (currentPlanet.age >= 10000) {
+            if (currentPlanet.age >= 1000) {
                 //sets the engame boolean to true to remove buttons
                 setEndgame(true)
 
@@ -79,6 +79,11 @@ function Home() {
                 <div>
                     <ul className='stat-container'>
                         <Stat
+                            statName={'age'}
+                            changeAnimation={changeAnimation}
+                            currentPlanet={currentPlanet}
+                        />
+                        <Stat
                             statName={'biosphere'}
                             changeAnimation={changeAnimation}
                             currentPlanet={currentPlanet}
@@ -98,38 +103,33 @@ function Home() {
                             changeAnimation={changeAnimation}
                             currentPlanet={currentPlanet}
                         />
-                        <Stat
-                            statName={'age'}
-                            changeAnimation={changeAnimation}
-                            currentPlanet={currentPlanet}
-                        />
                     </ul>
                 </div>
                 <Pet animation={animation} changeAnimation={changeAnimation} />
                 {
-                endgame ? 
-                <div>
-                    Game Over
-                </div>
-                :
-                <div className='button-container'>
-                    <Rainfall
-                        changeAnimation={changeAnimation}
-                        currentPlanet={currentPlanet}
-                    />
-                    <Volcano
-                        changeAnimation={changeAnimation}
-                        currentPlanet={currentPlanet}
-                    />
-                    <Sunlight
-                        changeAnimation={changeAnimation}
-                        currentPlanet={currentPlanet}
-                    />
-                    <Wind
-                        changeAnimation={changeAnimation}
-                        currentPlanet={currentPlanet}
-                    />
-                </div>
+                    endgame ?
+                        <div>
+                            Game Over
+                        </div>
+                        :
+                        <div className='button-container'>
+                            <Rainfall
+                                changeAnimation={changeAnimation}
+                                currentPlanet={currentPlanet}
+                            />
+                            <Volcano
+                                changeAnimation={changeAnimation}
+                                currentPlanet={currentPlanet}
+                            />
+                            <Sunlight
+                                changeAnimation={changeAnimation}
+                                currentPlanet={currentPlanet}
+                            />
+                            <Wind
+                                changeAnimation={changeAnimation}
+                                currentPlanet={currentPlanet}
+                            />
+                        </div>
                 }
             </>
         )

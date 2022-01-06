@@ -6,7 +6,7 @@ function Stat(props) {
     const statNumber = currentPlanet[statName]
 
     return (
-        <li className='stat-text'>{statName} {statNumber}</li>
+        <li className='stat-text'>{statName}: {statNumber} {statName === 'age' && statNumber > 0 && 'mil years'}</li>
     );
 }
 
