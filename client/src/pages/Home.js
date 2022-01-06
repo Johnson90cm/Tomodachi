@@ -17,6 +17,8 @@ function Home() {
     // variable to set the endgame to true later on
     const [endgame, setEndgame] = useState(false)
 
+    const [description, changeDescription] = useState('Click one of the interactions to start')
+
     useEffect(() => {
         if (data) {
             // grab last index in the users savedPlanets array (AKA planet that was just created)
@@ -116,20 +118,29 @@ function Home() {
                     <Rainfall
                         changeAnimation={changeAnimation}
                         currentPlanet={currentPlanet}
+                        changeDescription={changeDescription}
                     />
                     <Volcano
                         changeAnimation={changeAnimation}
                         currentPlanet={currentPlanet}
+                        changeDescription={changeDescription}
                     />
                     <Sunlight
                         changeAnimation={changeAnimation}
                         currentPlanet={currentPlanet}
+                        changeDescription={changeDescription}
                     />
                     <Wind
                         changeAnimation={changeAnimation}
                         currentPlanet={currentPlanet}
+                        changeDescription={changeDescription}
                     />
                 </div>
+                }
+                {
+                    <div>
+                        {description}
+                    </div>
                 }
             </>
         )
