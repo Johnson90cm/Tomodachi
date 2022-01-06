@@ -4,7 +4,7 @@ import { RAINFALL } from '../../utils/mutations'
 import { useMutation } from '@apollo/client'
 
 function Rainfall(props) {
-    // Need to grab planet's stats from db with useQuery
+    const { currentPlanet } = props;
 
     //set up function for updating stats
     const [rainfallMutation, {error} ] = useMutation(RAINFALL);
@@ -28,7 +28,7 @@ function Rainfall(props) {
             // instead of logging this random stat value, eventually add it to the db with a mutation
             
             try {
-                rainfallMutation({variables: {planetName: 'michael', biosphere: bioStatAddition, hydrosphere: hydroStatAddition, lithosphere: lithoStatAddition}})
+                rainfallMutation({variables: {planetId: currentPlanet._id, bio: bioStatAddition, hydro: hydroStatAddition, litho: lithoStatAddition}})
             } catch (e) {
                 console.error(e)
             }
@@ -52,7 +52,7 @@ function Rainfall(props) {
             // instead of logging this random stat value, eventually add it to the db with a mutation
             
             try {
-                rainfallMutation({variables: {planetName: 'michael', biosphere: bioStatAddition, hydrosphere: hydroStatAddition, lithosphere: lithoStatAddition}})
+                rainfallMutation({variables: {planetId: currentPlanet._id, bio: bioStatAddition, hydro: hydroStatAddition, litho: lithoStatAddition}})
             } catch (e) {
                 console.error(e)
             }
@@ -74,7 +74,7 @@ function Rainfall(props) {
 
             // instead of logging this random stat value, eventually add it to the db value of the planet
             try {
-                rainfallMutation({variables: {planetName: 'michael', biosphere: bioStatAddition, hydrosphere: hydroStatAddition, lithosphere: lithoStatAddition}})
+                rainfallMutation({variables: {planetId: currentPlanet._id, bio: bioStatAddition, hydro: hydroStatAddition, litho: lithoStatAddition}})
             } catch (e) {
                 console.error(e)
             }
