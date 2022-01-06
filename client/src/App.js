@@ -6,6 +6,7 @@ import Stat from './components/Stat';
 import Login from './pages/Login';
 import { ApolloProvider, ApolloClient, InMemoryCache, createHttpLink } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
+import auth from './utils/auth';
 
 //  retrieve token from localStorage and include it with each API request
 import { setContext } from "@apollo/client/link/context";
@@ -30,12 +31,11 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 
+console.log(auth.loggedIn())
 
 function App() {
 
   const [animation, changeAnimation] = useState('calm');
-
-
 
   return (
     <ApolloProvider client={client}>
@@ -45,7 +45,9 @@ function App() {
           <h1>
             Tomodachi
           </h1>
-          <Login />
+          {
+          auth.loggedIn() ? 
+          <>
           <div>
           <ul className='stat-container'>
             <Stat stat={'biosphere'} changeAnimation={changeAnimation} />
@@ -61,6 +63,10 @@ function App() {
             <Sunlight changeAnimation={changeAnimation} />
             <Wind changeAnimation={changeAnimation} />
           </div>
+          </>
+          :
+          <Login />
+          }
         </div>
       </div>
       </Router>
