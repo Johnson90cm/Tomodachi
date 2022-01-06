@@ -28,7 +28,7 @@ function Rainfall(props) {
             // instead of logging this random stat value, eventually add it to the db with a mutation
             
             try {
-                rainfallMutation('michael', bioStatAddition, hydroStatAddition, lithoStatAddition)
+                rainfallMutation({variables: {planetName: 'michael', biosphere: bioStatAddition, hydrosphere: hydroStatAddition, lithosphere: lithoStatAddition}})
             } catch (e) {
                 console.error(e)
             }
@@ -52,7 +52,7 @@ function Rainfall(props) {
             // instead of logging this random stat value, eventually add it to the db with a mutation
             
             try {
-                rainfallMutation('michael', bioStatAddition, hydroStatAddition, lithoStatAddition)
+                rainfallMutation({variables: {planetName: 'michael', biosphere: bioStatAddition, hydrosphere: hydroStatAddition, lithosphere: lithoStatAddition}})
             } catch (e) {
                 console.error(e)
             }
@@ -74,7 +74,7 @@ function Rainfall(props) {
 
             // instead of logging this random stat value, eventually add it to the db value of the planet
             try {
-                rainfallMutation('michael', bioStatAddition, hydroStatAddition, lithoStatAddition)
+                rainfallMutation({variables: {planetName: 'michael', biosphere: bioStatAddition, hydrosphere: hydroStatAddition, lithosphere: lithoStatAddition}})
             } catch (e) {
                 console.error(e)
             }

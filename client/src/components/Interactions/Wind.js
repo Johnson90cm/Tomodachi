@@ -22,7 +22,7 @@ function Wind(props) {
 
             // instead of logging this random stat value, eventually add it to the db with a mutation
             try {
-                windMutation('michael', bioStatAddition, atmoStatAddition)
+                windMutation({variables: { planetName: 'michael', biosphere: bioStatAddition, atmosphere: atmoStatAddition}})
             } catch (e) {
                 console.error(e)
             }
@@ -42,7 +42,7 @@ function Wind(props) {
 
             // instead of logging this random stat value, eventually add it to the db with a mutation
             try {
-                windMutation('michael', bioStatAddition, atmoStatAddition)
+                windMutation({variables: { planetName: 'michael', biosphere: bioStatAddition, atmosphere: atmoStatAddition}})
             } catch (e) {
                 console.error(e)
             }
@@ -62,7 +62,7 @@ function Wind(props) {
 
             // instead of logging this random stat value, eventually add it to the db value of the planet
             try {
-                windMutation('michael', bioStatAddition, atmoStatAddition)
+                windMutation({variables: { planetName: 'michael', biosphere: bioStatAddition, atmosphere: atmoStatAddition}})
             } catch (e) {
                 console.error(e)
             }

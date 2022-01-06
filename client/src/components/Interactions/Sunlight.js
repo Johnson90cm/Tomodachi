@@ -25,7 +25,7 @@ function Sunlight(props) {
 
             // instead of logging this random stat value, eventually add it to the db with a mutation
             try {
-                sunlightMutation('michael', bioStatAddition, hydroStatAddition, atmoStatAddition)
+                sunlightMutation({variables: {planetName: 'michael', biosphere: bioStatAddition, hydrosphere: hydroStatAddition, atmosphere: atmoStatAddition}})
             } catch (e) {
                 console.error(e)
             }
@@ -47,7 +47,7 @@ function Sunlight(props) {
 
             // instead of logging this random stat value, eventually add it to the db with a mutation
             try {
-                sunlightMutation('michael', bioStatAddition, hydroStatAddition, atmoStatAddition)
+                sunlightMutation({variables: {planetName: 'michael', biosphere: bioStatAddition, hydrosphere: hydroStatAddition, atmosphere: atmoStatAddition}})
             } catch (e) {
                 console.error(e)
             }
@@ -69,7 +69,7 @@ function Sunlight(props) {
 
             // instead of logging this random stat value, eventually add it to the db value of the planet
             try {
-                sunlightMutation('michael', bioStatAddition, hydroStatAddition, atmoStatAddition)
+                sunlightMutation({variables: {planetName: 'michael', biosphere: bioStatAddition, hydrosphere: hydroStatAddition, atmosphere: atmoStatAddition}})
             } catch (e) {
                 console.error(e)
             }

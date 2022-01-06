@@ -25,7 +25,7 @@ function Volcano(props) {
 
             // instead of logging this random stat value, eventually add it to the db with a mutation
             try {
-                volcanoMutation('michael', bioStatAddition, hydroStatAddition, lithoStatAddition, atmoStatAddition)
+                volcanoMutation({variables: {planetName: 'michael', biosphere: bioStatAddition, hydrosphere: hydroStatAddition, lithosphere:lithoStatAddition, atmosphere: atmoStatAddition}})
             } catch (e) {
                 console.error(e)
             }
@@ -49,7 +49,7 @@ function Volcano(props) {
 
             // instead of logging this random stat value, eventually add it to the db with a mutation
             try {
-                volcanoMutation('michael', bioStatAddition, hydroStatAddition, lithoStatAddition, atmoStatAddition)
+                volcanoMutation({variables: {planetName: 'michael', biosphere: bioStatAddition, hydrosphere: hydroStatAddition, lithosphere:lithoStatAddition, atmosphere: atmoStatAddition}})
             } catch (e) {
                 console.error(e)
             }
@@ -73,7 +73,7 @@ function Volcano(props) {
 
             // instead of logging this random stat value, eventually add it to the db value of the planet
             try {
-                volcanoMutation('michael', bioStatAddition, hydroStatAddition, lithoStatAddition, atmoStatAddition)
+                volcanoMutation({variables: {planetName: 'michael', biosphere: bioStatAddition, hydrosphere: hydroStatAddition, lithosphere:lithoStatAddition, atmosphere: atmoStatAddition}})
             } catch (e) {
                 console.error(e)
             }
