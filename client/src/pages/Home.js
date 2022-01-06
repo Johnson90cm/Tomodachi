@@ -40,10 +40,10 @@ function Home() {
                 hydrosphere +
                 lithosphere;
 
-                console.log(endgame)
+            console.log(endgame)
 
             //checks if planet has reached max age
-            if (currentPlanet.age >= 10000) {
+            if (currentPlanet.age >= 1000) {
                 //sets the engame boolean to true to remove buttons
                 setEndgame(true)
 
@@ -79,6 +79,11 @@ function Home() {
                 <div>
                     <ul className='stat-container'>
                         <Stat
+                            statName={'age'}
+                            changeAnimation={changeAnimation}
+                            currentPlanet={currentPlanet}
+                        />
+                        <Stat
                             statName={'biosphere'}
                             changeAnimation={changeAnimation}
                             currentPlanet={currentPlanet}
@@ -95,11 +100,6 @@ function Home() {
                         />
                         <Stat
                             statName={'atmosphere'}
-                            changeAnimation={changeAnimation}
-                            currentPlanet={currentPlanet}
-                        />
-                        <Stat
-                            statName={'age'}
                             changeAnimation={changeAnimation}
                             currentPlanet={currentPlanet}
                         />
