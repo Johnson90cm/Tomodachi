@@ -4,7 +4,7 @@ import { WIND } from '../../utils/mutations'
 import { useMutation } from '@apollo/client'
 
 function Wind(props) {
-    const { currentPlanet } = props;
+    const { currentPlanet, changeDescription } = props;
 
     const [windMutation, {error}] = useMutation(WIND)
 
@@ -28,10 +28,7 @@ function Wind(props) {
                 console.error(e)
             }
             
-            console.log(`A nice breeze blows around the planet...
-                Atmosphere increases: ${atmoStatAddition}
-                Biosphere decreases: ${bioStatAddition}
-                `)
+            changeDescription('A nice breeze blows around the planet...')
         }
 
         if (diceRoll >= 76 && diceRoll <= 95) {
@@ -48,10 +45,7 @@ function Wind(props) {
                 console.error(e)
             }
             
-            console.log(`The wind becomes very intense!
-                Atmosphere increases: ${atmoStatAddition}
-                Biosphere decreases: ${bioStatAddition}
-                `)
+            changeDescription('The wind becomes very intense!')
         }
 
         if (diceRoll >= 96 && diceRoll <= 100) {
@@ -68,10 +62,7 @@ function Wind(props) {
                 console.error(e)
             }
             
-            console.log(`Super winds cause massive tornadoes and tropical storms!
-                Atmosphere increases: ${atmoStatAddition}
-                Biosphere decreases: ${bioStatAddition}
-                `)
+            changeDescription('Super winds cause massive tornadoes and tropical storms!!!')
         }
 
         // We'll also want to render the interaction animation here

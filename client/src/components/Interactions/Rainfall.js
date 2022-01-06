@@ -4,7 +4,7 @@ import { RAINFALL } from '../../utils/mutations'
 import { useMutation } from '@apollo/client'
 
 function Rainfall(props) {
-    const { currentPlanet } = props;
+    const { currentPlanet, changeDescription } = props;
 
     //set up function for updating stats
     const [rainfallMutation, {error} ] = useMutation(RAINFALL);
@@ -33,12 +33,7 @@ function Rainfall(props) {
                 console.error(e)
             }
             
-
-            console.log(`Rainfall..
-                Hydrosphere increases: ${hydroStatAddition}
-                Biosphere increases: ${bioStatAddition}
-                Lithosphere decreases: ${lithoStatAddition}
-                `)
+            changeDescription('Rainfall...')
         }
 
         if (diceRoll >= 76 && diceRoll <= 95) {
@@ -57,11 +52,7 @@ function Rainfall(props) {
                 console.error(e)
             }
 
-            console.log(`Severe Storms!
-                Hydrosphere increases: ${hydroStatAddition}
-                Biosphere increases: ${bioStatAddition}
-                Lithosphere decreases: ${lithoStatAddition}
-                `)
+            changeDescription('Severe Storms!!!')
         }
 
         if (diceRoll >= 96 && diceRoll <= 100) {
@@ -79,11 +70,7 @@ function Rainfall(props) {
                 console.error(e)
             }
             
-            console.log(`Tsunamis drown entire continents!!!
-                Hydrosphere increases: ${hydroStatAddition}
-                Biosphere increases: ${bioStatAddition}
-                Lithosphere decreases: ${lithoStatAddition}
-                `)
+            changeDescription('Tsunamis drown entire continents!!!')
         }
     }
 
