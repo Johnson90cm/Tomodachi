@@ -61,9 +61,7 @@ body {
 
 .logout-button {
   position: absolute;
-  top: 100%;
-  left: 49.65%;
-  transform: translate(-50%, -50%);
+  top: 97.5%;
 }
 
 .block {
@@ -176,12 +174,6 @@ button:active {
     bottom: 273px;
   }
 
-  .logout-button {
-    top: 100%;
-    left: 49%;
-    transform: translate(-50%, -50%);
-  }
-
 }
 
 /* Iphone Media Queries */
@@ -243,9 +235,7 @@ button:active {
   }
 
   .logout-button {
-    top: 99%;
-    left: 48%;
-    transform: translate(-50%, -50%);
+    top: 96.5%;
   }
 
 }
