@@ -5,9 +5,9 @@ import Volcanos from '../../assets/volcanos.gif';
 import Tornado from '../../assets/tornado.gif'
 import Sunlight from '../../assets/sunlight.gif'
 import EndgameAtmo from '../../assets/wind-planet.gif'
-import EndgameBio from '../../assets/fires.gif'
+import EndgameBio from '../../assets/overgrown-planet.gif'
 import EndgameHydro from '../../assets/water-planet.gif'
-import EndgameLitho from '../../assets/desert-planet.gif'
+import EndgameLitho from '../../assets/fire-planet.gif'
 import EndgameGood from '../../assets/good-ending.gif'
 import './style.css'
 
