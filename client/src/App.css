@@ -26,7 +26,7 @@ body {
 }
 
 .container {
-  width: 32%;
+  width: 100%;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -34,6 +34,8 @@ body {
 }
 
 .box {
+  height: 85%;
+  width: 40%;
   background-color: rgb(69, 64, 114);
   border: 4px solid rgb(172, 172, 172);
   padding: 2.5rem;
@@ -52,8 +54,9 @@ body {
 
 .logout-button {
   position: absolute;
-  bottom: 0;
-  left: 4rem;
+  top: 90%;
+  left: 49.65%;
+  transform: translate(-50%, -50%);
 }
 
 ul {
@@ -70,14 +73,24 @@ li {
 
 input {
   display: block;
+  margin: 2rem;
   margin-right: auto;
   margin-left: auto;
-  width: 33%;
+  width: 50%;
   padding: 1em;
   text-align: center;
+  font-size: x-large;
+  font-weight: bold;
 }
 
-button {
+a {
+  display: block;
+  padding: 1rem;
+  color: white;
+  text-decoration: none;
+}
+
+button{
   height: 3rem;
   width: 8.5rem;
   margin: 0.5rem;
@@ -107,6 +120,10 @@ button:active {
     background-size: 100% 106%;
   }
 
+  input {
+    font-size: large;
+  }
+
   button {
     height: 2.5rem;
     width: 8rem;
@@ -118,9 +135,19 @@ button:active {
     display: block;
   }
 
+  .container {
+    width: 100%;
+  }
+
   .box {
     padding: 5%;
     height: 85%;
+    width: 75%;
+  }
+
+  .start-box {
+    padding: 0;
+    height: 50%;
     width: 75%;
   }
 
@@ -129,6 +156,13 @@ button:active {
     left: 130px;
     bottom: 235px;
   }
+
+  .logout-button {
+    top: 90%;
+    left: 49%;
+    transform: translate(-50%, -50%);
+  }
+
 }
 
 /* Iphone Media Queries */
@@ -136,6 +170,10 @@ button:active {
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) {
   body {
     background-size: 130% 140%;
+  }
+
+  input {
+    font-size: medium;
   }
 
   button {
@@ -155,11 +193,7 @@ button:active {
   }
 
   .container {
-    width: 32%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    width: 100%;
   }
 
   .box {
@@ -181,6 +215,13 @@ button:active {
     left: 34px;
     bottom: 205px;
   }
+
+  .logout-button {
+    top: 88%;
+    left: 48%;
+    transform: translate(-50%, -50%);
+  }
+
 }
 
 /* .App {

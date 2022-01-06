@@ -31,8 +31,6 @@ function Login(props) {
 
     return (
         <div className="container my-1">
-            <Link to="/signup">← Go to Signup</Link>
-
             <h2>Login</h2>
             <form onSubmit={handleFormSubmit}>
                 <div className="flex-row space-between my-2">
@@ -64,6 +62,7 @@ function Login(props) {
                     <button type="submit">Submit</button>
                 </div>
             </form>
+            <Link to="/signup">← Go to Signup</Link>
         </div>
     );
 }
