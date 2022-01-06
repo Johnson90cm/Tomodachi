@@ -4,6 +4,7 @@ import Stat from "../components/Stat";
 import { Rainfall, Sunlight, Volcano, Wind } from '../components/Interactions';
 import { useQuery } from "@apollo/client";
 import { QUERY_ME } from '../utils/queries';
+import { Redirect } from 'react-router-dom'
 
 function Home() {
 
@@ -68,7 +69,7 @@ function Home() {
                         changeAnimation('endgame-good')
                         changeDescription('You finished with a Perfect planet!! GREAT job!')
                     }
-                }, 5100)
+                }, 5200)
             }
         }
     }, [data, currentPlanet]);
@@ -154,6 +155,7 @@ function Home() {
                             />
                         </div>
                 }
+
             </>
         )
     }
