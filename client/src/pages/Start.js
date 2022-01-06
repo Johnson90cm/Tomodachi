@@ -19,8 +19,8 @@ function Start() {
                 }
             })
             console.log(mutationResponse)
-        } catch (e) {
-            console.log(e)
+        } catch (error) {
+            console.log(error)
         }
     }
 
