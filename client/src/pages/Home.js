@@ -127,7 +127,7 @@ function Home() {
                             <div className="game-over-text">
                                 Game Over
                             </div>
-                            <div>
+                            <div className="interaction-text">
                                 {description}
                             </div>
                         </div>
