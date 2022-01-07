@@ -92,6 +92,7 @@ ul {
 li {
   margin: 1em;
   font-size: small;
+  line-height: 1.5;
 }
 
 input {
@@ -135,6 +136,27 @@ button:active {
   box-shadow: 2px 2px 1px rgb(0, 0, 0, 0.2);
   transform: translateY(4px);
 }
+
+#biosphere {
+  color: green;
+  }
+
+#hydrosphere {
+  color: blue;
+  }
+
+#lithosphere {
+  color: red;
+  }
+
+#atmosphere {
+  color: yellow;
+  }
+
+#age {
+  list-style-type: none;
+}
+
 
 /* Ipad Media Queries */
 
