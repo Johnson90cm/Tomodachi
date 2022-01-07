@@ -289,6 +289,7 @@ button:active {
   .interaction-text{
     position: absolute;
     top: 92%;
+    font-size: 10px;
   }
 
   .game-over-text {
@@ -299,18 +300,18 @@ button:active {
   }
 
   .logout-button {
-    top: 96.5%;
+    top: 94.5%;
     left: 5%;
   }
   
   .newgame-button {
-    top: 96.5%;
+    top: 94.5%;
     right: 5%;
   }
 
   .music {
     position: absolute;
-    top: 96.5%;
+    top: 94.5%;
     left: 35%;
   }
 
