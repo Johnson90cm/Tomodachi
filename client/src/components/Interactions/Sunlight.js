@@ -4,7 +4,8 @@ import { SUNLIGHT } from '../../utils/mutations'
 import { useMutation } from '@apollo/client'
 
 function Sunlight(props) {
-    // Need to grab planet's stats from db with useQuery
+    const { currentPlanet, changeDescription } = props;
+
     const [sunlightMutation, {error}] = useMutation(SUNLIGHT)
 
     // Handle the button click and stat manipulation with this function
@@ -25,16 +26,12 @@ function Sunlight(props) {
 
             // instead of logging this random stat value, eventually add it to the db with a mutation
             try {
-                sunlightMutation({variables: {planetName: 'michael', biosphere: bioStatAddition, hydrosphere: hydroStatAddition, atmosphere: atmoStatAddition}})
+                sunlightMutation({variables: {planetId: currentPlanet._id, bio: bioStatAddition, hydro: hydroStatAddition, atmo: atmoStatAddition}})
             } catch (e) {
                 console.error(e)
             }
             
-            console.log(`The sun shines a little brighter...
-                Biosphere increases: ${bioStatAddition}
-                Atmosphere increases: ${atmoStatAddition}
-                Hydrosphere decreases: ${hydroStatAddition}
-                `)
+            changeDescription('Sunbeams warm the sky.')
         }
 
         if (diceRoll >= 76 && diceRoll <= 95) {
@@ -47,16 +44,12 @@ function Sunlight(props) {
 
             // instead of logging this random stat value, eventually add it to the db with a mutation
             try {
-                sunlightMutation({variables: {planetName: 'michael', biosphere: bioStatAddition, hydrosphere: hydroStatAddition, atmosphere: atmoStatAddition}})
+                sunlightMutation({variables: {planetId: currentPlanet._id, bio: bioStatAddition, hydro: hydroStatAddition, atmo: atmoStatAddition}})
             } catch (e) {
                 console.error(e)
             }
             
-            console.log(`The whole planet warms a little!
-                Biosphere increases: ${bioStatAddition}
-                Atmosphere increases: ${atmoStatAddition}
-                Hydrosphere decreases: ${hydroStatAddition}
-                `)
+            changeDescription('Intense sunlight shines down!')
         }
 
         if (diceRoll >= 96 && diceRoll <= 100) {
@@ -69,19 +62,13 @@ function Sunlight(props) {
 
             // instead of logging this random stat value, eventually add it to the db value of the planet
             try {
-                sunlightMutation({variables: {planetName: 'michael', biosphere: bioStatAddition, hydrosphere: hydroStatAddition, atmosphere: atmoStatAddition}})
+                sunlightMutation({variables: {planetId: currentPlanet._id, bio: bioStatAddition, hydro: hydroStatAddition, atmo: atmoStatAddition}})
             } catch (e) {
                 console.error(e)
             }
             
-            console.log(`Extreme sunlight causes all vegetation to explode with growth!
-                Biosphere increases: ${bioStatAddition}
-                Atmosphere increases: ${atmoStatAddition}
-                Hydrosphere decreases: ${hydroStatAddition}
-                `)
+            changeDescription('Extreme sunlight causes all vegetation to explode with growth!!!')
         }
-
-        // We'll also want to render the interaction animation here
     }
 
     return (

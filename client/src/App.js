@@ -1,12 +1,15 @@
 import './App.css';
-import Login from './pages/Login';
 import { ApolloProvider, ApolloClient, InMemoryCache, createHttpLink } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
 import auth from './utils/auth';
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
 import Home from './pages/Home';
+import Login from './pages/Login';
 import Signup from './pages/Signup';
 import Start from './pages/Start';
+import PlaySound from './components/Music';
+import { useState } from 'react'
+
 
 const authLink = setContext((_, { header }) => {
   const token = localStorage.getItem("id_token");
@@ -28,11 +31,24 @@ const client = new ApolloClient({
 });
 
 function App() {
+  const [loginRedirect, setLoginRedirect] = useState(false)
+
   function logout() {
     auth.logout()
+    setLoginRedirect(true)
+    setTimeout(()=>{
+      setLoginRedirect(false)
+    }, 100)
   }
 
-  console.log(auth.loggedIn())
+  const [start, setStart] = useState(false)
+
+  function redirectStart() {
+      setStart(true)
+      setTimeout(()=>{
+        setStart(false)
+      }, 100)
+  }
 
   return (
     <ApolloProvider client={client}>
@@ -42,29 +58,31 @@ function App() {
             <h1>
               Tomodachi
             </h1>
-            {
+            {/* {
               auth.loggedIn() ?
-                <div>Logged In</div>
+                <div>Logged In!</div>
                 :
-                <div>Not Logged In</div>
-            }
-            <Routes>
-              {
-                auth.loggedIn() ?
-                  <Route exact path='/start' element={<Start />} />
-                  :
-                  <Route exact path='/login' element={<Login />} />
-              }
-              <Route exact path='/signup' element={<Signup />} />
-              <Route exact path='/home' element={<Home />} />
-            </Routes>
+                <div>Please Log In</div>
+            } */}
+            <Switch>
+              <Route exact path='/'>
+                {auth.loggedIn() ? <Start /> : <Login />}
+              </Route>
+              <Route exact path='/start' component={Start} />
+              <Route exact path='/login' component={Login} />
+              <Route exact path='/signup'component={Signup} />
+              <Route exact path='/home' component={Home} />
+            </Switch>
           </div>
           <button onClick={logout} className='logout-button'>Logout</button>
+          <button type="submit" onClick={redirectStart} className='newgame-button'>New Game</button>
+          {start && <Redirect to='/start' />}
+          {loginRedirect && <Redirect to='/login'/>}
+          <PlaySound />
         </div>
       </Router>
     </ApolloProvider>
   );
 }
-
 
 export default App;

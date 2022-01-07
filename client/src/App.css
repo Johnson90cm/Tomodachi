@@ -48,15 +48,38 @@ body {
   width: 50%;
 
   position: relative;
-  left: 153px;
+  left: 190px;
   bottom: 250px;
+}
+
+.game-over-text {
+  width: 50%;
+  position: relative;
+  left: 197px;
+  bottom: 285px;
 }
 
 .logout-button {
   position: absolute;
-  top: 90%;
-  left: 49.65%;
-  transform: translate(-50%, -50%);
+  top: 97.5%;
+  left: 30%;
+}
+
+.newgame-button {
+  position: absolute;
+  top: 97.5%;
+  right: 30%;
+}
+
+.music {
+  position: absolute;
+  top: 97.5%;
+  left: 46%;
+}
+
+.block {
+  display: block;
+  width: 100%;
 }
 
 ul {
@@ -157,10 +180,34 @@ button:active {
     bottom: 235px;
   }
 
+  .interaction-text{
+    position: absolute;
+    width: 100%;
+    top: 92%;
+    left: 0%;
+  }
+
+  .game-over-text {
+    width: 50%;
+    position: relative;
+    left: 149px;
+    bottom: 273px;
+  }
+
   .logout-button {
-    top: 90%;
-    left: 49%;
-    transform: translate(-50%, -50%);
+    top: 97.5%;
+    left: 20%;
+  }
+  
+  .newgame-button {
+    top: 97.5%;
+    right: 20%;
+  }
+
+  .music {
+    position: absolute;
+    top: 97.5%;
+    left: 40.5%;
   }
 
 }
@@ -216,10 +263,32 @@ button:active {
     bottom: 205px;
   }
 
+  .interaction-text{
+    position: absolute;
+    top: 92%;
+  }
+
+  .game-over-text {
+    width: 50%;
+    position: relative;
+    left: 85px;
+    bottom: 225px;
+  }
+
   .logout-button {
-    top: 88%;
-    left: 48%;
-    transform: translate(-50%, -50%);
+    top: 96.5%;
+    left: 5%;
+  }
+  
+  .newgame-button {
+    top: 96.5%;
+    right: 5%;
+  }
+
+  .music {
+    position: absolute;
+    top: 96.5%;
+    left: 35%;
   }
 
 }

@@ -4,7 +4,7 @@ import { VOLCANO } from '../../utils/mutations'
 import { useMutation } from '@apollo/client'
 
 function Volcano(props) {
-    // Need to grab planet's stats from db with useQuery
+    const { currentPlanet, changeDescription } = props;
 
     const [volcanoMutation, { error } ] = useMutation(VOLCANO);
 
@@ -25,17 +25,12 @@ function Volcano(props) {
 
             // instead of logging this random stat value, eventually add it to the db with a mutation
             try {
-                volcanoMutation({variables: {planetName: 'michael', biosphere: bioStatAddition, hydrosphere: hydroStatAddition, lithosphere:lithoStatAddition, atmosphere: atmoStatAddition}})
+                volcanoMutation({variables: {planetId: currentPlanet._id, bio: bioStatAddition, hydro: hydroStatAddition, litho:lithoStatAddition, atmo: atmoStatAddition}})
             } catch (e) {
                 console.error(e)
             }
             
-            console.log(`Volcanoes erupt..
-                Lithosphere increases: ${lithoStatAddition}
-                Hydrosphere decreases: ${hydroStatAddition}
-                Atmosphere decreases: ${atmoStatAddition}
-                Biosphere decreases: ${bioStatAddition}
-                `)
+            changeDescription('Volcanoes erupt all around.')
         }
 
         if (diceRoll >= 76 && diceRoll <= 95) {
@@ -49,17 +44,12 @@ function Volcano(props) {
 
             // instead of logging this random stat value, eventually add it to the db with a mutation
             try {
-                volcanoMutation({variables: {planetName: 'michael', biosphere: bioStatAddition, hydrosphere: hydroStatAddition, lithosphere:lithoStatAddition, atmosphere: atmoStatAddition}})
+                volcanoMutation({variables: {planetId: currentPlanet._id, bio: bioStatAddition, hydro: hydroStatAddition, litho:lithoStatAddition, atmo: atmoStatAddition}})
             } catch (e) {
                 console.error(e)
             }
             
-            console.log(`Severe Eruptions!
-                Lithosphere increases: ${lithoStatAddition}
-                Hydrosphere decreases: ${hydroStatAddition}
-                Atmosphere decreases: ${atmoStatAddition}
-                Biosphere decreases: ${bioStatAddition}
-                `)
+            changeDescription('Severe eruptions form new islands!')
         }
 
         if (diceRoll >= 96 && diceRoll <= 100) {
@@ -73,20 +63,13 @@ function Volcano(props) {
 
             // instead of logging this random stat value, eventually add it to the db value of the planet
             try {
-                volcanoMutation({variables: {planetName: 'michael', biosphere: bioStatAddition, hydrosphere: hydroStatAddition, lithosphere:lithoStatAddition, atmosphere: atmoStatAddition}})
+                volcanoMutation({variables: {planetId: currentPlanet._id, bio: bioStatAddition, hydro: hydroStatAddition, litho:lithoStatAddition, atmo: atmoStatAddition}})
             } catch (e) {
                 console.error(e)
             }
             
-            console.log(`Massive volcanoes terraform the planet!!!
-                Lithosphere increases: ${lithoStatAddition}
-                Hydrosphere decreases: ${hydroStatAddition}
-                Atmosphere decreases: ${atmoStatAddition}
-                Biosphere decreases: ${bioStatAddition}
-                `)
+            changeDescription('Massive super-volcanoes terraform the planet!!!')
         }
-
-        // We'll also want to render the interaction animation here
     }
 
     return (

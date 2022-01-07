@@ -5,27 +5,33 @@ import Volcanos from '../../assets/volcanos.gif';
 import Tornado from '../../assets/tornado.gif'
 import Sunlight from '../../assets/sunlight.gif'
 import EndgameAtmo from '../../assets/wind-planet.gif'
-import EndgameBio from '../../assets/fires.gif'
+import EndgameBio from '../../assets/overgrown-planet.gif'
 import EndgameHydro from '../../assets/water-planet.gif'
-import EndgameLitho from '../../assets/desert-planet.gif'
+import EndgameLitho from '../../assets/fire-planet.gif'
 import EndgameGood from '../../assets/good-ending.gif'
 import './style.css'
 
 function Pet(props) {
 
+    const {changeDisabled, changeAnimation, animation} = props
+
     const renderAnimation = () => {
-        switch (props.animation) {
+        switch (animation) {
         case 'rainfall':
-            setTimeout(() => { props.changeAnimation('calm') }, 5000)
+            changeDisabled(true)
+            setTimeout(() => { changeAnimation('calm'); changeDisabled(false) }, 5000)
             return Rainfall;
         case 'sunlight':
-            setTimeout(() => { props.changeAnimation('calm') }, 10000)
+            changeDisabled(true)
+            setTimeout(() => { changeAnimation('calm'); changeDisabled(false) }, 5000)
             return Sunlight;
         case 'volcanoes':
-            setTimeout(() => { props.changeAnimation('calm') }, 5000)
+            changeDisabled(true)
+            setTimeout(() => { changeAnimation('calm'); changeDisabled(false) }, 5000)
             return Volcanos;
         case 'wind':
-            setTimeout(() => { props.changeAnimation('calm') }, 5000)
+            changeDisabled(true)
+            setTimeout(() => { changeAnimation('calm'); changeDisabled(false) }, 5000)
             return Tornado;
         case 'endgame-bio':
             return EndgameBio;
@@ -33,7 +39,7 @@ function Pet(props) {
             return EndgameAtmo;
         case 'endgame-hydro':
             return EndgameHydro;
-        case 'endgame=litho':
+        case 'endgame-litho':
             return EndgameLitho;
         case 'endgame-good':
             return EndgameGood;

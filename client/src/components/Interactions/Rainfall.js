@@ -4,7 +4,7 @@ import { RAINFALL } from '../../utils/mutations'
 import { useMutation } from '@apollo/client'
 
 function Rainfall(props) {
-    // Need to grab planet's stats from db with useQuery
+    const { currentPlanet, changeDescription } = props;
 
     //set up function for updating stats
     const [rainfallMutation, {error} ] = useMutation(RAINFALL);
@@ -28,17 +28,12 @@ function Rainfall(props) {
             // instead of logging this random stat value, eventually add it to the db with a mutation
             
             try {
-                rainfallMutation({variables: {planetName: 'michael', biosphere: bioStatAddition, hydrosphere: hydroStatAddition, lithosphere: lithoStatAddition}})
+                rainfallMutation({variables: {planetId: currentPlanet._id, bio: bioStatAddition, hydro: hydroStatAddition, litho: lithoStatAddition}})
             } catch (e) {
                 console.error(e)
             }
             
-
-            console.log(`Rainfall..
-                Hydrosphere increases: ${hydroStatAddition}
-                Biosphere increases: ${bioStatAddition}
-                Lithosphere decreases: ${lithoStatAddition}
-                `)
+            changeDescription('A little rain sprinkles the ground.')
         }
 
         if (diceRoll >= 76 && diceRoll <= 95) {
@@ -52,16 +47,12 @@ function Rainfall(props) {
             // instead of logging this random stat value, eventually add it to the db with a mutation
             
             try {
-                rainfallMutation({variables: {planetName: 'michael', biosphere: bioStatAddition, hydrosphere: hydroStatAddition, lithosphere: lithoStatAddition}})
+                rainfallMutation({variables: {planetId: currentPlanet._id, bio: bioStatAddition, hydro: hydroStatAddition, litho: lithoStatAddition}})
             } catch (e) {
                 console.error(e)
             }
 
-            console.log(`Severe Storms!
-                Hydrosphere increases: ${hydroStatAddition}
-                Biosphere increases: ${bioStatAddition}
-                Lithosphere decreases: ${lithoStatAddition}
-                `)
+            changeDescription('Severe storms cause flooding!')
         }
 
         if (diceRoll >= 96 && diceRoll <= 100) {
@@ -74,19 +65,13 @@ function Rainfall(props) {
 
             // instead of logging this random stat value, eventually add it to the db value of the planet
             try {
-                rainfallMutation({variables: {planetName: 'michael', biosphere: bioStatAddition, hydrosphere: hydroStatAddition, lithosphere: lithoStatAddition}})
+                rainfallMutation({variables: {planetId: currentPlanet._id, bio: bioStatAddition, hydro: hydroStatAddition, litho: lithoStatAddition}})
             } catch (e) {
                 console.error(e)
             }
             
-            console.log(`Tsunamis drown entire continents!!!
-                Hydrosphere increases: ${hydroStatAddition}
-                Biosphere increases: ${bioStatAddition}
-                Lithosphere decreases: ${lithoStatAddition}
-                `)
+            changeDescription('Massive tsunamis drown entire continents!!!')
         }
-
-    // We'll also want to render the interaction animation here
     }
 
     return (
