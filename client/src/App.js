@@ -7,7 +7,9 @@ import Home from './pages/Home';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 import Start from './pages/Start';
+import PlaySound from './components/Music';
 import { useState } from 'react'
+
 
 const authLink = setContext((_, { header }) => {
   const token = localStorage.getItem("id_token");
@@ -76,6 +78,7 @@ function App() {
           <button type="submit" onClick={redirectStart} className='newgame-button'>New Game</button>
           {start && <Redirect to='/start' />}
           {loginRedirect && <Redirect to='/login'/>}
+          <PlaySound />
         </div>
       </Router>
     </ApolloProvider>

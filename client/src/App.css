@@ -62,13 +62,19 @@ body {
 .logout-button {
   position: absolute;
   top: 97.5%;
-  left: 40%;
+  left: 30%;
 }
 
 .newgame-button {
   position: absolute;
   top: 97.5%;
-  right: 40%;
+  right: 30%;
+}
+
+.music {
+  position: absolute;
+  top: 97.5%;
+  left: 46%;
 }
 
 .block {
@@ -190,12 +196,18 @@ button:active {
 
   .logout-button {
     top: 97.5%;
-    left: 25%;
+    left: 20%;
   }
   
   .newgame-button {
     top: 97.5%;
-    right: 25%;
+    right: 20%;
+  }
+
+  .music {
+    position: absolute;
+    top: 97.5%;
+    left: 40.5%;
   }
 
 }
@@ -265,12 +277,18 @@ button:active {
 
   .logout-button {
     top: 96.5%;
-    left: 15%;
+    left: 5%;
   }
   
   .newgame-button {
     top: 96.5%;
-    right: 15%;
+    right: 5%;
+  }
+
+  .music {
+    position: absolute;
+    top: 96.5%;
+    left: 35%;
   }
 
 }
