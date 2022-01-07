@@ -18,7 +18,7 @@ function Stat(props) {
     }
 
     return (
-        <li className='stat-text'>{statName}: {statNumber}</li>
+        <li className='stat-text' id={statName}>{statName}: {statNumber}</li>
     );
 }
 

@@ -89,21 +89,25 @@ function Home() {
                             statName={'biosphere'}
                             changeAnimation={changeAnimation}
                             currentPlanet={currentPlanet}
+                            className='biosphere'
                         />
                         <Stat
                             statName={'hydrosphere'}
                             changeAnimation={changeAnimation}
                             currentPlanet={currentPlanet}
+                            className='hydrosphere'
                         />
                         <Stat
                             statName={'lithosphere'}
                             changeAnimation={changeAnimation}
                             currentPlanet={currentPlanet}
+                            className='lithosphere'
                         />
                         <Stat
                             statName={'atmosphere'}
                             changeAnimation={changeAnimation}
                             currentPlanet={currentPlanet}
+                            className='atmosphere'
                         />
                     </ul>
                 </div>
@@ -113,6 +117,7 @@ function Home() {
                                 statName={'age'}
                                 changeAnimation={changeAnimation}
                                 currentPlanet={currentPlanet}
+                                className='age'
                             />
                         </div>
                 <Pet animation={animation} changeAnimation={changeAnimation} changeDisabled={changeDisabled} />
