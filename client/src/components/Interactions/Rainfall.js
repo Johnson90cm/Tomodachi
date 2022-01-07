@@ -33,7 +33,7 @@ function Rainfall(props) {
                 console.error(e)
             }
             
-            changeDescription('Rainfall...')
+            changeDescription('A little rain sprinkles the ground.')
         }
 
         if (diceRoll >= 76 && diceRoll <= 95) {
@@ -52,7 +52,7 @@ function Rainfall(props) {
                 console.error(e)
             }
 
-            changeDescription('Severe Storms!!!')
+            changeDescription('Severe storms cause flooding!')
         }
 
         if (diceRoll >= 96 && diceRoll <= 100) {
@@ -70,7 +70,7 @@ function Rainfall(props) {
                 console.error(e)
             }
             
-            changeDescription('Tsunamis drown entire continents!!!')
+            changeDescription('Massive tsunamis drown entire continents!!!')
         }
     }
 

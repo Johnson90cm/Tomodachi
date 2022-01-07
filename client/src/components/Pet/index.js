@@ -39,7 +39,7 @@ function Pet(props) {
             return EndgameAtmo;
         case 'endgame-hydro':
             return EndgameHydro;
-        case 'endgame=litho':
+        case 'endgame-litho':
             return EndgameLitho;
         case 'endgame-good':
             return EndgameGood;

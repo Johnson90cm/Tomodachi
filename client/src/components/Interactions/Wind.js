@@ -28,7 +28,7 @@ function Wind(props) {
                 console.error(e)
             }
             
-            changeDescription('A nice breeze blows around the planet...')
+            changeDescription('A nice breeze blows around the planet.')
         }
 
         if (diceRoll >= 76 && diceRoll <= 95) {
@@ -62,7 +62,7 @@ function Wind(props) {
                 console.error(e)
             }
             
-            changeDescription('Super winds cause massive tornadoes and tropical storms!!!')
+            changeDescription('Extreme winds cause massive tornadoes and tropical storms!!!')
         }
 
         // We'll also want to render the interaction animation here
