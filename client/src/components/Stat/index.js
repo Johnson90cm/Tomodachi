@@ -7,7 +7,7 @@ function Stat(props) {
 
     if(statName === 'age' && statNumber === 0) {
         return(
-            <li className='stat-text'>Baby Planet :)</li>
+            <li className='stat-text'>Baby Planet</li>
         )
     }
 
