@@ -62,13 +62,19 @@ body {
 .logout-button {
   position: absolute;
   top: 97.5%;
-  left: 40%;
+  left: 30%;
 }
 
 .newgame-button {
   position: absolute;
   top: 97.5%;
-  right: 40%;
+  right: 30%;
+}
+
+.music {
+  position: absolute;
+  top: 97.5%;
+  left: 46%;
 }
 
 .block {
@@ -86,6 +92,8 @@ ul {
 li {
   margin: 1em;
   font-size: small;
+  line-height: 1.5;
+  list-style-type: none;
 }
 
 input {
@@ -129,6 +137,27 @@ button:active {
   box-shadow: 2px 2px 1px rgb(0, 0, 0, 0.2);
   transform: translateY(4px);
 }
+
+#biosphere {
+  color: green;
+  }
+
+#hydrosphere {
+  color: blue;
+  }
+
+#lithosphere {
+  color: red;
+  }
+
+#atmosphere {
+  color: yellow;
+  }
+
+#age {
+  list-style-type: none;
+}
+
 
 /* Ipad Media Queries */
 
@@ -190,12 +219,18 @@ button:active {
 
   .logout-button {
     top: 97.5%;
-    left: 25%;
+    left: 20%;
   }
   
   .newgame-button {
     top: 97.5%;
-    right: 25%;
+    right: 20%;
+  }
+
+  .music {
+    position: absolute;
+    top: 97.5%;
+    left: 40.5%;
   }
 
 }
@@ -265,12 +300,18 @@ button:active {
 
   .logout-button {
     top: 96.5%;
-    left: 15%;
+    left: 5%;
   }
   
   .newgame-button {
     top: 96.5%;
-    right: 15%;
+    right: 5%;
+  }
+
+  .music {
+    position: absolute;
+    top: 96.5%;
+    left: 35%;
   }
 
 }
