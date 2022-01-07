@@ -5,8 +5,20 @@ function Stat(props) {
 
     const statNumber = currentPlanet[statName]
 
+    if(statName === 'age' && statNumber === 0) {
+        return(
+            <li className='stat-text'>Baby Planet :)</li>
+        )
+    }
+
+    if(statName === 'age' && statNumber > 0) {
+        return(
+            <li className='stat-text'>{statNumber} million years old</li>
+        )
+    }
+
     return (
-        <li className='stat-text'>{statName}: {statNumber} {statName === 'age' && statNumber > 0 && 'mil years'}</li>
+        <li className='stat-text'>{statName}: {statNumber}</li>
     );
 }
 
