@@ -27,6 +27,7 @@ Tomodachi is a creation simulation game developed by four budding developers in 
 ![Tomodachi](./images/tomodachi.png)
 
 ## Deployed Site
+![Deployed Site](https://tomodachi-sadboitay.herokuapp.com/)
 
 ## GitHub 
 * GitHub: (https://github.com/Johnson90cm/Tomodachi)
